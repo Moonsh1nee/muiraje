@@ -1,0 +1,11 @@
+@forward '../assets/styles/base/reset';
+@forward "../assets/styles/base/fonts";
+
+:root {
+  background-color: #e0dfdd;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,18 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import mainGirls from '@/assets/img/welcom/main_girls.webp';
+import mainGirls from '@/assets/img/welcome/main_girls.webp';
+import styles from '@/assets/styles/pages/welcome.module.scss';
 
-export default function Home() {
+export default function Welcome() {
   return (
-    <main className="flex justify-center w-full h-screen sm:items-center pt-10 px-2 bg-center bg-cover bg-gradient-gray">
-      <div className="relative w-[800px]">
+    <main className={styles.main}>
+      <div className={styles.mainWrapper}>
         <Image
           src={mainGirls}
+          className={styles.mainImg}
           alt="Main girls welcoming to the office sleepover"
           priority
         />
-        <Link className="absolute top-24 h-full sm:top-36 sm:text-center w-full" href="/catalog">
-          <h1 className="font-ztformom text-7xl sm:text-6xl text-shadow text-white shadow-black">
+        <Link className={styles.mainLink} href="/catalog">
+          <h1 className={styles.title}>
             Click to join the office sleepover.
           </h1>
         </Link>
