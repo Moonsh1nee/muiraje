@@ -47,6 +47,17 @@
 .mainLink {
   position: relative;
   text-align: center;
+
+  &:focus {
+    outline: none;
+    border: 2px solid #000;
+    border-radius: 36px;
+    padding: 10px 7px 30px;
+  }
+
+  &:focus .title {
+    text-shadow: $shadow-1;
+  }
 }
 
 .title {

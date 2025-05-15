@@ -8,6 +8,7 @@ $Condensed: "3270Condensed", sans-serif;
 
 //Colors
 $white: #ffffff;
+$blue: #0000b1;
 
 //Breakpoints
 $small-mobile: 320px;
@@ -15,3 +16,30 @@ $mobile: 576px;
 $tablet: 768px;
 $small-desktop: 992px;
 $desktop: 1200px;
+
+//Shadows
+$shadow-1:
+  0 4px 4px
+    rgba(
+      $color: #000,
+      $alpha: 0.25
+    ),
+  0 2px 4px
+    rgba(
+      $color: #000,
+      $alpha: 0.25
+    ),
+  0 -2px 4px rgba(
+      $color: #000,
+      $alpha: 0.3
+    ),
+  0 0px 3.2px
+    rgba(
+      $color: #000,
+      $alpha: 0.25
+    );
+
+$shadow-2:
+  0 4px 4px #000,
+  0 2px 0 #000,
+  2px 0 0 #000;
