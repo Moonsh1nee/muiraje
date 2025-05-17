@@ -1,14 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.scss";
+import { Header } from '@/assets/components/catalog/Header';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Muiraje",
-  description: "Muiraje",
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  }
+  title: 'Muiraje Catalog',
+  description: 'Muiraje Catalog',
 };
 
 export default function RootLayout({
@@ -19,8 +14,9 @@ export default function RootLayout({
   return (
     <html lang="ru en">
       <body>
+        <Header />
         {children}
-      </body>
+        </body>
     </html>
   );
 }
