@@ -1,4 +1,3 @@
-import { Header } from '@/assets/components/catalog/Header';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,10 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru en">
-      <body>
-        <Header />
-        {children}
-        </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,39 @@
+@use '../base/variables' as *;
+
+.header {
+  background: linear-gradient(90deg, #000C78 0%, #B5B5B5 82%);
+  padding: 3px 3px 3px 13px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoText {
+  font-family: $basis33;
+  font-size: 30px;
+  color: $white;
+  text-shadow: $shadow-2;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logoTitle {
+  letter-spacing: -4px;
+
+  span {
+    letter-spacing: normal;
+  }
+}
+
+.logoSupTitle {
+  font-size: 14px;
+  letter-spacing: -1px;
+  margin-bottom: 13px;
+}
+
+

@@ -1,10 +1,10 @@
 import Image from 'next/image';
+import styles from '@/assets/styles/components/Icon.module.scss';
 
-type IconName = 'computer';
+export type IconName = 'computer';
 
 interface IconProps {
   name: IconName;
-  className?: string;
   alt?: string;
   width?: number;
   height?: number;
@@ -12,7 +12,6 @@ interface IconProps {
 
 export default function Icon({
   name,
-  className,
   alt = `${name} icon`,
   width = 24,
   height = 24,
@@ -20,6 +19,6 @@ export default function Icon({
   const src = `/img/icons/${name}.svg`;
 
   return (
-    <Image src={src} className={className} alt={alt} width={width} height={height} unoptimized />
+    <Image src={src} className={styles[name] || styles.icon} alt={alt} width={width} height={height} unoptimized />
   );
 }
