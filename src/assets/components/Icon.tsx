@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '@/assets/styles/components/Icon.module.scss';
 
-export type IconName = 'computer';
+export type IconName = 'computer' | 'btnCross' | 'btnRoll' | 'btnFullScreen';
 
 interface IconProps {
   name: IconName;

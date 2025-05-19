@@ -1,8 +1,12 @@
-@use '../base/variables' as *;
+@use "../base/variables" as *;
 
 .header {
-  background: linear-gradient(90deg, #000C78 0%, #B5B5B5 82%);
+  background: linear-gradient(90deg, #000c78 0%, #b5b5b5 82%);
   padding: 3px 3px 3px 13px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logoWrapper {
@@ -36,4 +40,66 @@
   margin-bottom: 13px;
 }
 
+.headerButtons {
+  display: flex;
+  align-items: center;
+}
 
+.headerButton {
+  width: 28px;
+  height: 28px;
+  background: $grey;
+
+  border-right: 2px solid $dark-grey;
+  border-bottom: 2px solid $dark-grey;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $light-grey;
+  }
+
+  &:focus {
+    outline: none;
+
+    .headerButtonTop {
+      border-top: 2px solid $dark-grey-2;
+      border-left: 2px solid $dark-grey-2;
+    }
+  }
+
+  &:active {
+    border-right: 2px solid $white;
+    border-bottom: 2px solid $white;
+
+    .headerButtonTop {
+      border-top: 2px solid $dark-grey;
+      border-left: 2px solid $dark-grey;
+    }
+
+    .headerButtonContent {
+      border-top: 2px solid $dark-grey-2;
+      border-left: 2px solid $dark-grey-2;
+      border-right: none;
+      border-bottom: none;
+    }
+  }
+}
+
+.headerButtonTop {
+  width: 26px;
+  height: 26px;
+
+  border-top: 2px solid $white;
+  border-left: 2px solid $white;
+}
+
+.headerButtonContent {
+  position: relative;
+
+  width: 24px;
+  height: 24px;
+
+  border-right: 2px solid $dark-grey-2;
+  border-bottom: 2px solid $dark-grey-2;
+}
