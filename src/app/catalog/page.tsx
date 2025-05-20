@@ -1,4 +1,5 @@
 import { Header } from '@/assets/components/catalog/Header';
+import NavigationBar from '@/assets/components/catalog/NavigationBar';
 import styles from '@/assets/styles/pages/Catalog.module.scss';
 
 export default function Catalog() {
@@ -6,6 +7,7 @@ export default function Catalog() {
     <main className={styles.catalog}>
       <div className={styles.catalogWrapper}>
         <Header nav="" nameIcon="computer" />
+        <NavigationBar />
       </div>
     </main>
   );

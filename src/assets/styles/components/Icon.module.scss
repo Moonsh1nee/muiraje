@@ -7,6 +7,7 @@
 
 .computer {
   height: 32px;
+  width: auto;
 
   @media (max-width: $tablet) {
     width: 18px;
