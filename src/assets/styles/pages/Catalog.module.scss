@@ -1,0 +1,23 @@
+@use '../base/variables' as *;
+
+.catalog {
+  font-family: $basis33;
+  background-color: $bg-color-catalog;
+
+  height: 100vh;
+  overflow: hidden;
+
+  border-right: 3px solid $dark-grey;
+  border-bottom: 3px solid $dark-grey;
+}
+
+.catalogWrapper {
+  height: 100%;
+
+  padding: 6px 6px 0 6px;
+
+  border-top: 3px solid $white;
+  border-left: 3px solid $white;
+  border-right: 3px solid $dark-grey-2;
+  border-bottom: 3px solid $dark-grey-2;
+}

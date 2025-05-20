@@ -1,13 +1,12 @@
 import { Header } from '@/assets/components/catalog/Header';
+import styles from '@/assets/styles/pages/Catalog.module.scss';
 
 export default function Catalog() {
   return (
-    <>
-      <Header nav="" nameIcon="computer" />
-      <main>
-        <h1>Catalog</h1>
-        <p>Welcome to the catalog page!</p>
-      </main>
-    </>
+    <main className={styles.catalog}>
+      <div className={styles.catalogWrapper}>
+        <Header nav="" nameIcon="computer" />
+      </div>
+    </main>
   );
 }

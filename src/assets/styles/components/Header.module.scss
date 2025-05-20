@@ -2,28 +2,52 @@
 
 .header {
   background: linear-gradient(90deg, #000c78 0%, #b5b5b5 82%);
-  padding: 3px 3px 3px 13px;
+  padding: 1px 1px 1px 7px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: $tablet) {
+    padding: 1px 1px 1px 5px;
+  }
 }
 
 .logoWrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+
+  @media (max-width: $tablet) {
+    gap: 4px;
+  }
+
+  @media (max-width: $small-mobile) {
+    gap: 2px;
+  }
 }
 
 .logoText {
   font-family: $basis33;
   font-size: 30px;
   color: $white;
-  text-shadow: $shadow-2;
+  text-shadow: $shadow-header;
 
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (max-width: $tablet) {
+    font-size: 22px;
+    gap: 3px;
+    text-shadow: $shadow-header-tablet;
+  }
+
+  @media (max-width: $small-mobile) {
+    font-size: 15px;
+    gap: 2px;
+    text-shadow: $shadow-header-mobile;
+  }
 }
 
 .logoTitle {
@@ -32,12 +56,30 @@
   span {
     letter-spacing: normal;
   }
+
+  @media (max-width: $tablet) {
+    letter-spacing: -2px;
+  }
 }
 
 .logoSupTitle {
   font-size: 14px;
   letter-spacing: -1px;
   margin-bottom: 13px;
+  text-shadow: $shadow-header-top;
+
+  @media (max-width: $tablet) {
+    letter-spacing: normal;
+    font-size: 10px;
+    margin-bottom: 5px;
+    text-shadow: $shadow-header-top-tablet;
+  }
+
+  @media (max-width: $small-mobile) {
+    font-size: 8px;
+    margin-bottom: 3px;
+    text-shadow: $shadow-header-top-mobile;
+  }
 }
 
 .headerButtons {
@@ -84,6 +126,43 @@
       border-bottom: none;
     }
   }
+
+  @media (max-width: $tablet) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: $small-mobile) {
+    width: 13px;
+    height: 13px;
+
+    border-right: 1px solid $dark-grey;
+    border-bottom: 1px solid $dark-grey;
+
+    &:focus {
+      .headerButtonTop {
+        border-top: 1px solid $dark-grey-2;
+        border-left: 1px solid $dark-grey-2;
+      }
+    }
+
+    &:active {
+      border-right: 1px solid $white;
+      border-bottom: 1px solid $white;
+
+      .headerButtonTop {
+        border-top: 1px solid $dark-grey;
+        border-left: 1px solid $dark-grey;
+      }
+
+      .headerButtonContent {
+        border-top: 1px solid $dark-grey-2;
+        border-left: 1px solid $dark-grey-2;
+        border-right: none;
+        border-bottom: none;
+      }
+    }
+  }
 }
 
 .headerButtonTop {
@@ -92,6 +171,19 @@
 
   border-top: 2px solid $white;
   border-left: 2px solid $white;
+
+  @media (max-width: $tablet) {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: $small-mobile) {
+    width: 12px;
+    height: 12px; 
+
+    border-top: 1px solid $white;
+    border-left: 1px solid $white;
+  }
 }
 
 .headerButtonContent {
@@ -102,4 +194,17 @@
 
   border-right: 2px solid $dark-grey-2;
   border-bottom: 2px solid $dark-grey-2;
+
+  @media (max-width: $tablet) {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: $small-mobile) {
+    width: 11px;
+    height: 11px;
+
+    border-right: 1px solid $dark-grey-2;
+    border-bottom: 1px solid $dark-grey-2;
+  }
 }
