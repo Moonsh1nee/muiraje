@@ -4,8 +4,7 @@
   font-family: $basis33;
   background-color: $bg-color-catalog;
 
-  height: 100vh;
-  overflow: hidden;
+  height: calc(100vh - 50px);
 
   border-right: 3px solid $dark-grey;
   border-bottom: 3px solid $dark-grey;
