@@ -1,0 +1,31 @@
+{
+  "file": {
+    "link1": {
+      "title": "Telegram",
+      "url": "https://t.me/Moonsh1ne_OP",
+      "active": true
+    },
+    "link2": {
+      "title": "Videos",
+      "url": "",
+      "active": false
+    }
+  },
+  "about": {
+    "link1": {
+      "title": "Muiraje",
+      "url": "/about",
+      "active": true
+    },
+    "link2": {
+      "title": "Site",
+      "url": "",
+      "active": false
+    },
+    "link3": {
+      "title": "Collection",
+      "url": "",
+      "active": false
+    }
+  }
+}

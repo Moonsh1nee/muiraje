@@ -1,5 +1,5 @@
 import { Header } from '@/assets/components/catalog/Header';
-import NavigationBar from '@/assets/components/catalog/NavigationBar';
+import NavigationBar from '@/assets/components/nav/NavigationBar';
 import styles from '@/assets/styles/pages/Catalog.module.scss';
 
 export default function Catalog() {
