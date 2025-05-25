@@ -17,7 +17,6 @@ export default function NavigationBar() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
 
-      // Проверяем, что клик не по кнопке навигации и не по модальному окну
       const isClickOnButton = target.closest(`.${styles.navigationItem}`);
       const isClickOnModal =
         target.closest('[class*="navigationModal"]') ||
