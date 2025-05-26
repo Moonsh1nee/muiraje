@@ -1,0 +1,37 @@
+[
+  {
+    "src": "/img/catalog/people.png",
+    "alt": "All items",
+    "width": 68,
+    "height": 97,
+    "text": "All"
+  },
+  {
+    "src": "/img/catalog/ring.png",
+    "alt": "Ring items",
+    "width": 105,
+    "height": 105,
+    "text": "Accry"
+  },
+  {
+    "src": "/img/catalog/hoodie.png",
+    "alt": "Hoodies items",
+    "width": 96,
+    "height": 114,
+    "text": "Hoodies"
+  },
+  {
+    "src": "/img/catalog/pant.png",
+    "alt": "Pants items",
+    "width": 75,
+    "height": 105,
+    "text": "Pants"
+  },
+  {
+    "src": "/img/catalog/top.png",
+    "alt": "Tops items",
+    "width": 71,
+    "height": 100,
+    "text": "Tops"
+  }
+]

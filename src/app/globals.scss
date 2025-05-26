@@ -1,6 +1,5 @@
 @forward "../assets/styles/base/reset";
 @forward "../assets/styles/base/fonts";
-@use "../assets/styles/base/variables" as *;
 
 :root {
   background-color: #e0dfdd;
@@ -9,68 +8,4 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.divider-top--bg,
-.divider-left--bg,
-.divider-top--white,
-.divider-left--white {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 3px;
-
-  background-color: $bg-color-catalog;
-}
-
-.divider-top--white,
-.divider-left--white {
-  top: 3px;
-  left: 3px;
-  background-color: $white;
-}
-
-.divider-left--bg,
-.divider-left--white {
-  height: 100%;
-  width: 3px;
-}
-
-.divider-right--dark-grey,
-.divider-bottom--dark-grey,
-.divider-right--dark-grey-2,
-.divider-bottom--dark-grey-2 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-
-  height: 100%;
-  width: 3px;
-
-  background-color: $dark-grey;
-}
-
-.divider-right--dark-grey-2,
-.divider-bottom--dark-grey-2 {
-  background-color: $dark-grey-2;
-  bottom: 3px;
-  right: 3px;
-}
-
-.divider-bottom--dark-grey,
-.divider-bottom--dark-grey-2 {
-  height: 3px;
-  width: 100%;
-}
-
-.divider-top--white,
-.divider-bottom--dark-grey-2 {
-  width: calc(100% - 6px);
-}
-
-.divider-left--white,
-.divider-right--dark-grey-2 {
-  height: calc(100% - 6px);
 }
