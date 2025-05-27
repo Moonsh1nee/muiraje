@@ -1,0 +1,107 @@
+@use "../base/variables" as *;
+
+.footer {
+  font-family: $basis33;
+  font-size: 22px;
+  color: $black;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  background-color: $dark-grey-3;
+
+  border-top: 3px solid $dark-grey-3;
+}
+
+.footerWrapper {
+  padding: 4px;
+  border-top: 3px solid $white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footerButton {
+  border-top: 2px solid $white;
+  border-left: 2px solid $white;
+  border-right: 2px solid $dark-grey;
+  border-bottom: 2px solid $dark-grey;
+
+  transition: all 0.2s ease-in-out;
+
+  & > div {
+    border-right: 2px solid $dark-grey-2;
+    border-bottom: 2px solid $dark-grey-2;
+
+    display: flex;
+    align-items: center;
+    padding: 1px;
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:focus {
+    outline: 2px solid $black;
+    outline-offset: 2px;
+
+    background-color: $light-grey;
+    transition: all 0.2s ease-in-out;
+
+    & > div {
+      border: 2px solid $dark-grey-2;
+    }
+  }
+
+  &:hover {
+    & > div {
+      border: 2px solid $dark-grey-2;
+    }
+  }
+
+  &:active {
+    border-left: 2px solid $dark-grey;
+    border-top: 2px solid $dark-grey;
+    border-bottom: none;
+    border-right: none;
+
+    & > div {
+      border-top: 2px solid $dark-grey-2;
+      border-left: 2px solid $dark-grey-2;
+      border-right: 2px solid $white;
+      border-bottom: 2px solid $white;
+    }
+  }
+}
+
+.footerIcon {
+  width: 26px;
+  height: auto;
+  object-fit: contain;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.footerIcons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 0 18px;
+  position: relative;
+}

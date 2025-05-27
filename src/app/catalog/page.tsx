@@ -1,16 +1,21 @@
 import CatalogBar from '@/assets/components/catalog/CatalogBar';
+import Footer from '@/assets/components/Footer';
 import { Header } from '@/assets/components/Header';
 import NavigationBar from '@/assets/components/nav/NavigationBar';
 import styles from '@/assets/styles/pages/Catalog.module.scss';
 
 export default function Catalog() {
   return (
-    <main className={styles.catalog}>
-      <div className={styles.catalogWrapper}>
-        <Header nav="" link='/' nameIcon="computer" />
-        <NavigationBar />
-        <CatalogBar />
-      </div>
-    </main>
+    <>
+      <main className={styles.catalog}>
+        <div className={styles.catalogWrapper}>
+          <Header nav="" link="/" nameIcon="computer" />
+          <NavigationBar />
+          <CatalogBar />
+        </div>
+      </main>
+
+      <Footer />
+    </>
   );
 }
