@@ -17,57 +17,69 @@ export default function Footer() {
               <Image
                 src={'/img/icons/footerPC.png'}
                 alt="Computer Icon"
-                width={32}
-                height={27}
+                width={16}
+                height={12}
                 className={styles.footerIcon}
               />
-              <span className={styles.footerButtonText}>Прив!</span>
+              <span className={styles.footerButtonText}>
+                Пр<span>и</span>
+                <span>в</span>!
+              </span>
             </div>
           </button>
 
-          <div className={styles.footerIcons}>
-            <div className={styles.footerDividersWrapper}>
-              <div className={styles.footerDividerFirst}></div>
-              <div className={styles.footerDividerSecond}></div>
-            </div>
+          <div className={styles.footerDividersWrapper}>
+            <div className={styles.footerDividerFirst}></div>
+            <div className={styles.footerDividerSecond}></div>
+          </div>
 
+          <div className={styles.footerIcons}>
             <Image
               src={'/img/icons/footerCalc.png'}
               alt="Calculator Icon"
-              width={24}
-              height={24}
+              width={18}
+              height={16}
               className={styles.footerIcon}
             />
             <Image
               src={'/img/icons/footerNote.png'}
               alt="Note Icon"
-              width={24}
-              height={24}
+              width={18}
+              height={16}
               className={styles.footerIcon}
             />
             <Image
               src={'/img/icons/footerFolder.png'}
               alt="Folder Icon"
-              width={24}
-              height={24}
+              width={18}
+              height={16}
               className={styles.footerIcon}
             />
-            <div className={styles.footerDividersWrapper}>
-              <div className={styles.footerDividerFirst}></div>
-              <div className={styles.footerDividerSecond}></div>
-            </div>
+          </div>
+
+          <div className={styles.footerDividersWrapper}>
+            <div className={styles.footerDividerSecond}></div>
+            <div className={styles.footerDividerFirst}></div>
           </div>
 
           <div className={styles.footerPath}>
-            <Icon
-              name="computer"
-              alt="Computer Icon"
-              width={24}
-              height={24}
-              className="computerFooterIcon"
-            />
-            <div className={styles.footerPathText}>
-              Muiraje: Каталог <span>8+8+8</span>
+            <div>
+              <div>
+                <Icon
+                  name="computer"
+                  alt="Computer Icon"
+                  width={24}
+                  height={24}
+                  className="computerFooterIcon"
+                />
+                <div className={styles.footerPathText}>
+                  <div>
+                    M<span>uiraje: </span>
+                    <span>Каталог</span>
+                  </div>
+                  <div>8+8+8</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -75,12 +87,12 @@ export default function Footer() {
         <div className={styles.footerRight}>
           <Image
             src={'/img/icons/footerVolume.png'}
-            className={styles.footerIcon}
             alt="Volume Icon"
-            width={24}
-            height={24}
+            width={19}
+            height={16}
+            className={styles.footerIcon + ' ' + styles.volumeIcon}
           />
-          <Icon name="lang" alt="Language Icon" width={24} height={24} />
+          <Icon name="lang" alt="Language Icon" width={36} height={36} />
           {time ? (
             <div className={styles.time}>
               {time.time.toLocaleTimeString([], {

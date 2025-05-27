@@ -1,4 +1,5 @@
 @use "../base/variables" as *;
+@use "../base/mixins" as *;
 
 .footer {
   font-family: $basis33;
@@ -13,29 +14,63 @@
   background-color: $dark-grey-3;
 
   border-top: 3px solid $dark-grey-3;
+
+  @media (max-width: $tablet) {
+    font-size: 18px;
+    border-top-width: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    border-top-width: 1px;
+  }
+
+  @media (max-width: 370px) {
+    font-size: 14px;
+  }
 }
 
 .footerWrapper {
   padding: 4px;
   border-top: 3px solid $white;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-aic-jcsb;
   gap: 30px;
+
+  @media (max-width: $tablet) {
+    padding: 2px;
+    border-top-width: 2px;
+    gap: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1px 2px;
+    border-top-width: 1px;
+    gap: 5px;
+  }
 }
 
 .footerLeft {
-  display: flex;
-  align-items: center;
+  @include flex-aic;
   gap: 5px;
+
+  @media (max-width: $tablet) {
+    gap: 3px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 2px;
+  }
+
+  @media (max-width: 370px) {
+    row-gap: 4px; 
+    column-gap: 1px;
+    flex-wrap: wrap;
+  }
 }
 
 .footerButton {
-  border-top: 2px solid $white;
-  border-left: 2px solid $white;
-  border-right: 2px solid $dark-grey;
-  border-bottom: 2px solid $dark-grey;
+  @include border--white--dark-grey;
 
   transition: all 0.2s ease-in-out;
 
@@ -43,8 +78,7 @@
     border-right: 2px solid $dark-grey-2;
     border-bottom: 2px solid $dark-grey-2;
 
-    display: flex;
-    align-items: center;
+    @include flex-aic;
     padding: 1px;
 
     transition: all 0.2s ease-in-out;
@@ -75,33 +109,294 @@
     border-right: none;
 
     & > div {
-      border-top: 2px solid $dark-grey-2;
-      border-left: 2px solid $dark-grey-2;
-      border-right: 2px solid $white;
-      border-bottom: 2px solid $white;
+      @include border--dark-grey-2--white;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    border-width: 1px;
+
+    & > div {
+      border-right-width: 1px;
+      border-bottom-width: 1px;
+    }
+
+    &:focus {
+      outline: 1px solid $black;
+      outline-offset: 1px;
+
+      & > div {
+        border-width: 1px;
+      }
+    }
+
+    &:hover {
+      & > div {
+        border-width: 1px;
+      }
+    }
+
+    &:active {
+      border-left-width: 1px;
+      border-top-width: 1px;
+
+      & > div {
+        border-width: 1px;
+      }
+    }
+  }
+}
+
+.footerButtonText {
+  & > span:first-child {
+    letter-spacing: -1px;
+  }
+
+  & > span:last-child {
+    letter-spacing: -4px;
+  }
+
+  @media (max-width: $tablet) {
+    & > span:last-child {
+      letter-spacing: -3px;
+    }
+  }
+
+  @media (max-width: 370px) {
+    & > span:first-child {
+      letter-spacing: 0;
+    }
+    & > span:last-child {
+      letter-spacing: -2px;
     }
   }
 }
 
 .footerIcon {
-  width: 26px;
-  height: auto;
+  width: auto;
+  height: 24px;
   object-fit: contain;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-aic-jcsb;
 
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: $tablet) {
+    height: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    height: 16px;
+  }
+
+  @media (max-width: 370px) {
+    height: 14px;
+  }
 }
 
 .footerIcons {
-  display: flex;
-  align-items: center;
+  @include flex-aic;
   gap: 4px;
 
-  padding: 0 18px;
-  position: relative;
+  padding: 0 5px;
+
+  @media (max-width: $tablet) {
+    gap: 2px;
+    padding: 0 3px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 1px;
+    padding: 0 2px;
+  }
+
+  @media (max-width: 370px) {
+    padding: 0 1px;
+  }
+}
+
+.footerDividersWrapper {
+  @include flex-aic;
+  gap: 4px;
+
+  @media (max-width: $tablet) {
+    gap: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    gap: 1px;
+  }
+}
+
+.footerDividerFirst {
+  height: 100%;
+  min-height: 40px;
+  width: 4px;
+
+  background-color: $dark-grey-2;
+  border-right: 2px solid $white;
+
+  @media (max-width: $tablet) {
+    min-height: 36px;
+  }
+
+  @media (max-width: $mobile) {
+    min-height: 22px;
+    width: 2px;
+
+    border-right-width: 1px;
+  }
+}
+
+.footerDividerSecond {
+  height: 100%;
+  min-height: 30px;
+  width: 6px;
+
+  background-color: $dark-grey-3;
+  @include border--white--dark-grey-2;
+
+  @media (max-width: $tablet) {
+    min-height: 26px;
+    width: 3px;
+
+    border-width: 1px;
+  }
+
+  @media (max-width: $mobile) {
+    min-height: 16px;
+  }
+}
+
+.footerPath {
+  @include border--dark-grey--white;
+
+  & > div {
+    @include border--grey--dark-grey-3;
+
+    & > div {
+      background-image: url("/img/catalog/footerPathBg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      border-top: 2px solid $white;
+
+      @include flex-aic;
+      gap: 4px;
+
+      padding: 0 5px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    & > div {
+      & > div {
+        gap: 3px;
+        padding: 0 3px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    border-width: 1px;
+
+    & > div {
+      border-width: 1px;
+
+      & > div {
+        border-top-width: 1px;
+        gap: 2px;
+        padding: 0 2px;
+      }
+    }
+  }
+}
+
+.footerPathText {
+  @include flex-aic;
+
+  & > div > span:first-child {
+    letter-spacing: -3px;
+  }
+
+  & > div > span:nth-child(2) {
+    letter-spacing: -1px;
+  }
+
+  & > div:last-child {
+    font-size: 18px;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  @media (max-width: $tablet) {
+    & > div > span:first-child {
+      letter-spacing: -2px;
+    }
+
+    & > div > span:nth-child(2) {
+      letter-spacing: -1px;
+    }
+
+    & > div:last-child {
+      font-size: 14px;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    & > div:last-child {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+  }
+
+  @media (max-width: 370px) {
+    & > div:last-child {
+      font-size: 10px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.footerRight {
+  @include flex-aic;
+  padding: 3px 16px 3px 6px;
+
+  @include border--dark-grey-2--white;
+
+  & > div {
+    letter-spacing: -1px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 2px 12px 2px 4px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 1px 8px 1px 2px;
+    border-width: 1px;
+  }
+
+  @media (max-width: 370px) {
+    padding: 1px 4px 1px 1px;
+    flex-shrink: 0;
+  }
+}
+
+.volumeIcon {
+  margin-right: 6px;
+
+  @media (max-width: $mobile) {
+    margin-right: 4px;
+  }
+
+  @media (max-width: 370px) {
+    margin-right: 2px;
+  }
 }

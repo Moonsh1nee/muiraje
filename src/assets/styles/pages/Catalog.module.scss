@@ -4,12 +4,28 @@
   font-family: $basis33;
   background-color: $bg-color-catalog;
 
-  height: calc(100vh - 50px);
+  height: calc(100vh - 54px);
 
   border-top: 3px solid $bg-color-catalog;
   border-left: 3px solid $bg-color-catalog;
   border-right: 3px solid $dark-grey;
   border-bottom: 3px solid $dark-grey;
+
+  @media (max-width: $tablet) {
+    height: calc(100vh - 44px);
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    height: calc(100vh - 27px);
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+  }
 }
 
 .catalogWrapper {
@@ -20,4 +36,20 @@
   border-left: 3px solid $white;
   border-right: 3px solid $dark-grey-2;
   border-bottom: 3px solid $dark-grey-2;
+
+  @media (max-width: $tablet) {
+    padding: 4px 4px 0 4px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 2px 2px 0 2px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+  }
 }

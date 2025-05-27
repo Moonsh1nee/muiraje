@@ -91,8 +91,8 @@
 }
 
 .catalogItemWrapper {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   transition: all 0.2s ease-in-out;
 
   &:focus {
@@ -195,8 +195,8 @@
 }
 
 .catalogItemImage {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
 
   @media (max-width: $tablet) {
