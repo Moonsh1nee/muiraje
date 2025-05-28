@@ -220,17 +220,6 @@
   }
 }
 
-.catalogCartText {
-  font-family: $SwissSiena;
-  font-size: 12px;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  font-weight: 700;
-
-  @media (max-width: $mobile) {
-    font-size: 11px;
-  }
-}
-
 .catalogBarMobile {
   display: none;
 

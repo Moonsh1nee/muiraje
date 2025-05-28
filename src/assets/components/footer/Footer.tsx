@@ -2,7 +2,7 @@
 
 import styles from '@/assets/styles/components/Footer.module.scss';
 import Image from 'next/image';
-import Icon from './Icon';
+import Icon from '../Icon';
 import { useCurrentTime } from './Time';
 
 export default function Footer() {
@@ -17,8 +17,8 @@ export default function Footer() {
               <Image
                 src={'/img/icons/footerPC.png'}
                 alt="Computer Icon"
-                width={16}
-                height={12}
+                width={32}
+                height={27}
                 className={styles.footerIcon}
               />
               <span className={styles.footerButtonText}>

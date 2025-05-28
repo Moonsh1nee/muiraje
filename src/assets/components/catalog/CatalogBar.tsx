@@ -111,7 +111,7 @@ export default function CatalogBar() {
             />
           </div>
         </button>
-        <span className={styles.catalogCartText}>Корзина</span>
+        <span className={styles.catalogItemText}>Корзина</span>
       </div>
 
       <div
