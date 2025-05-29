@@ -1,4 +1,5 @@
 import CatalogBar from '@/assets/components/catalog/CatalogBar';
+import CatalogItems from '@/assets/components/catalog/CatalogItems';
 import Footer from '@/assets/components/footer/Footer';
 import FooterMenu from '@/assets/components/footer/FooterMenu';
 import { Header } from '@/assets/components/Header';
@@ -13,7 +14,7 @@ export default function Catalog() {
           <Header nav="" link="/" nameIcon="computer" />
           <NavigationBar />
           <CatalogBar />
-
+          <CatalogItems />
           <FooterMenu />
         </div>
       </main>

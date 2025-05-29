@@ -1,0 +1,129 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.catalogItems {
+  flex-grow: 1;
+  margin: 0 30px 40px;
+
+  @include border--dark-grey-2--white;
+  border-width: 3px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-color: $white;
+  position: relative;
+
+  @media (max-width: $tablet) {
+    margin: 0 20px 30px;
+    border-width: 2px;
+  }
+
+  @media (max-width: $mobile) {
+    margin: 0 10px 20px;
+    border-width: 1px;
+  }
+}
+
+.catalogItemsWrapper {
+  border-top: 3px solid $dark-grey;
+  border-left: 3px solid $dark-grey;
+  border-right: 3px solid $bg-color-catalog;
+  border-bottom: 3px solid $bg-color-catalog;
+
+  padding: 20px;
+  min-height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @media (max-width: $tablet) {
+    padding: 10px;
+    border-width: 2px;
+    grid-gap: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 5px;
+    border-width: 1px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+.catalogItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.catalogItemImageWrapper {
+  max-width: 200px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    .catalogItemImage {
+      opacity: 0;
+      display: none;
+    }
+
+    .catalogItemImageHover {
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.catalogItemImage, .catalogItemImageHover {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 1;
+
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: $tablet) {
+    max-width: 180px;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 140px;
+  }
+}
+
+.catalogItemImageHover {
+  opacity: 0;
+  display: none;
+}
+
+.catalogItemText {
+  font-family: $basis33;
+  font-size: 16px;
+  color: $black;
+
+  @media (max-width: $tablet) {
+    font-size: 14px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 12px;
+  }
+}

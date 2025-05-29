@@ -1,9 +1,46 @@
+'use client';
+
 import Link from 'next/link';
 import styles from '@/assets/styles/components/FooterMenu.module.scss';
+import { useModalStore } from '@/assets/store/modalStore';
+import { useEffect, useRef } from 'react';
 
 export default function FooterMenu() {
+  const { isOpen, closeModal } = useModalStore();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(target) &&
+        !target.closest('[data-footer-button]')
+      ) {
+        closeModal();
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        closeModal();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscape);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, closeModal]);
+
   return (
-    <div className={styles.footerNavMenu}>
+    <div
+      ref={menuRef}
+      className={styles.footerNavMenu + ' ' + (isOpen ? styles.footerNavMenuOpen : '')}>
       <nav className={styles.footerNav}>
         <div className={styles.footerNavLeftSide}>Muiraje 2024 Office</div>
 
@@ -53,7 +90,7 @@ export default function FooterMenu() {
         <div className={styles.footerNavDivider}></div>
 
         <div className={styles.footerNavLinks}>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/" className={styles.footerNavLink}>
             Завершить ночёвку
           </Link>
         </div>

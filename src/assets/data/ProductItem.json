@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "link": "hoodie",
+    "name": "COZY OVERSIZE GRAY HOODIE UNISEX",
+    "waitForMe": "Отправка в течение 6-8 дней. Изготавливаюсь непосредственно в Санкт-Петербурге :)",
+    "aboutMe": "Подчеркну вашу деловую сторону и обеспечу комфорт. С капюшоном для прохладных дней, удобным карманом и вышивкой, я стану важной частью вашего повседневного гардероба, добавляя стиль и уют к любой ситуации.",
+    "structure": "50% хлопок, 50% полиэстер, плотность: 305 г/м². ",
+    "myPrice": 4824,
+    "size": "S, M, L, XL, XXL",
+    "img": [
+      "img/products/hoodie/img1.png",
+      "img/products/hoodie/img2.png",
+      "img/products/hoodie/img3.png",
+      "img/products/hoodie/img4.png",
+      "img/products/hoodie/img5.png",
+      "img/products/hoodie/img6.png",
+      "img/products/hoodie/img7.png",
+      "img/products/hoodie/img8.png",
+      "img/products/hoodie/img9.png"
+    ],
+    "bgImg": "img/products/hoodie/img-bg.png"
+  }
+]

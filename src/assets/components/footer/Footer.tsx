@@ -4,15 +4,17 @@ import styles from '@/assets/styles/components/Footer.module.scss';
 import Image from 'next/image';
 import Icon from '../Icon';
 import { useCurrentTime } from './Time';
+import { useModalStore } from '@/assets/store/modalStore';
 
 export default function Footer() {
   const time = useCurrentTime(60000);
+  const toggleMenu = useModalStore((state) => state.toggleModal);
 
   return (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
         <div className={styles.footerLeft}>
-          <button className={styles.footerButton}>
+          <button className={styles.footerButton} onClick={toggleMenu} data-footer-button>
             <div>
               <Image
                 src={'/img/icons/footerPC.png'}

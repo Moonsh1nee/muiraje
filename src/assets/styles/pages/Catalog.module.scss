@@ -4,6 +4,7 @@
   font-family: $basis33;
   background-color: $bg-color-catalog;
 
+  overflow: hidden;
   position: relative;
   height: calc(100vh - 54px);
 
@@ -27,9 +28,16 @@
     border-right-width: 1px;
     border-bottom-width: 1px;
   }
+
+  @media (max-width: 314px) {
+    height: calc(100vh - 49px);
+  }
 }
 
 .catalogWrapper {
+  display: flex;
+  flex-direction: column;
+  
   height: 100%;
   padding: 6px 6px 0 6px;
 
