@@ -159,29 +159,57 @@
   },
   {
     "id": 7,
-    "link": "lighters",
-    "name": "COZY BLUE AND RED LIGHTERS",
+    "link": "lightersBaW",
+    "name": "COZY BLACK AND WHITE LIGHTERS",
     "waitForMe": "Без ожиданий. В наличии. Доставка в любой день.",
     "aboutMe": [
       "Зажигалка - атрибут успешного человека, который всегда готов к вызову и может пробудить огонь в своей душе. Не забывайте о силе и мощи, которую дает вам эта маленькая, но такая значимая вещь.",
-      "Глянцевое покрытие.",
+      "Матовое покрытие.",
       "(ВНИМАНИЕ!!! Доступно только доставкой “Мьюражер” по Санкт-Петербургу)."
     ],
     "myPrice": 224,
     "color": ["Blue", "Red", "Black", "White"],
-    "colorActive": "Blue",
+    "colorActive": "Black",
     "img": [
-      "img/products/lightersBaR/img1.png",
-      "img/products/lightersBaR/img2.png",
-      "img/products/lightersBaR/img3.png",
-      "img/products/lightersBaR/img4.png",
-      "img/products/lightersBaR/img5.png",
-      "img/products/lightersBaR/img6.png",
-      "img/products/lightersBaR/img7.png",
-      "img/products/lightersBaR/img8.png",
-      "img/products/lightersBaR/img9.png"
+      "img/products/lightersBaW/img1.png",
+      "img/products/lightersBaW/img2.png",
+      "img/products/lightersBaW/img3.png",
+      "img/products/lightersBaW/img4.png",
+      "img/products/lightersBaW/img5.png",
+      "img/products/lightersBaW/img6.png",
+      "img/products/lightersBaW/img7.png",
+      "img/products/lightersBaW/img8.png",
+      "img/products/lightersBaW/img9.png"
     ],
-    "bgImg": "img/products/lightersBaR/img-bg.gif",
+    "bgImg": "img/products/lightersBaW/img-bg.gif",
     "bgText": "- Did you hear Angelina got a promotion? She must have done something special..."
+  },
+  {
+    "id": 8,
+    "link": "pantsLight",
+    "name": "COZY OVERSIZE LIGHT GRAY PANTS UNISEX",
+    "waitForMe": "Без ожиданий. В наличии. Отправка в течение 2-3 дней. ",
+    "aboutMe": [
+      "Я — твой идеальный спутник на любой день! Моя свободная, оверсайз-посадка дарит абсолютную свободу движений, а продуманные детали — эластичный пояс, боковые карманы, удобные шнурки и регуляторы длины позволяют легко адаптировать меня под любой стиль: сделать штанины уже или шире, короче или длиннее. Спереди меня украшает вышивка логотипа бренда Muiraje.",
+      "Моя мягкая и эластичная ткань дарит комфорт, держит форму и остается безупречной даже после множества стирок. Натуральный хлопок добавляет мягкость, а полиэстер — прочность.",
+      "Мой нежно-серый оттенок легко сочетается с любыми вещами — от маек до худи.",
+      "Буду твоим лучшим выбором для отдыха, прогулок, танцев, и активного образа жизни.",
+      "80% хлопок, 20% полиэстер."
+    ],
+    "myPrice": 5824,
+    "size": ["M", "L"],
+    "color": ["Dark gray", "Light gray"],
+    "colorActive": "Light gray",
+    "img": [
+      "img/products/pantsLight/img1.png",
+      "img/products/pantsLight/img2.png",
+      "img/products/pantsLight/img3.png",
+      "img/products/pantsLight/img4.png",
+      "img/products/pantsLight/img5.png",
+      "img/products/pantsLight/img6.png",
+      "img/products/pantsLight/img7.png"
+    ],
+    "bgImg": "img/products/pantsLight/img-bg.gif",
+    "bgText": "– Where are your pants, colleague?"
   }
 ]
