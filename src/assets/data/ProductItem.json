@@ -4,10 +4,12 @@
     "link": "hoodie",
     "name": "COZY OVERSIZE GRAY HOODIE UNISEX",
     "waitForMe": "Отправка в течение 6-8 дней. Изготавливаюсь непосредственно в Санкт-Петербурге :)",
-    "aboutMe": "Подчеркну вашу деловую сторону и обеспечу комфорт. С капюшоном для прохладных дней, удобным карманом и вышивкой, я стану важной частью вашего повседневного гардероба, добавляя стиль и уют к любой ситуации.",
-    "structure": "50% хлопок, 50% полиэстер, плотность: 305 г/м². ",
+    "aboutMe": [
+      "Подчеркну вашу деловую сторону и обеспечу комфорт. С капюшоном для прохладных дней, удобным карманом и вышивкой, я стану важной частью вашего повседневного гардероба, добавляя стиль и уют к любой ситуации.",
+      "50% хлопок, 50% полиэстер, плотность: 305 г/м²."
+    ],
     "myPrice": 4824,
-    "size": "S, M, L, XL, XXL",
+    "size": ["S", "M", "L", "XL", "XXL"],
     "img": [
       "img/products/hoodie/img1.png",
       "img/products/hoodie/img2.png",
@@ -19,6 +21,167 @@
       "img/products/hoodie/img8.png",
       "img/products/hoodie/img9.png"
     ],
-    "bgImg": "img/products/hoodie/img-bg.png"
+    "bgImg": "img/products/hoodie/img-bg.gif",
+    "bgText": "– Your boss is gonna love it!"
+  },
+  {
+    "id": 2,
+    "link": "top",
+    "name": "COZY GRAY TANK TOP UNISEX",
+    "waitForMe": "Отправка в течение 7 дней. Изготавливаюсь непосредственно в Санкт-Петербурге :)",
+    "aboutMe": [
+      "Легко сочетаюсь с элементами гардероба, помогая создавать разнообразные образы.",
+      "(Вы можете выбрать длину майки из списка или указать желаемую длину в комментарии при оформлении заказа).",
+      "Хлопок 100%."
+    ],
+    "myPrice": 2624,
+    "size": ["S", "M", "L", "XL"],
+    "length": ["57-58", "64-65", "71-72"],
+    "color": ["Gray", "White"],
+    "colorActive": "Gray",
+    "img": [
+      "img/products/top/img1.png",
+      "img/products/top/img2.png",
+      "img/products/top/img3.png",
+      "img/products/top/img4.png",
+      "img/products/top/img5.png",
+      "img/products/top/img6.png"
+    ],
+    "bgImg": "img/products/top/img-bg.gif",
+    "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs."
+  },
+  {
+    "id": 3,
+    "link": "necklace",
+    "name": "COZY SILVER NECKLACE UNISEX",
+    "waitForMe": "Отправка в течение 2-3 недель. Украшение изготавливается под заказ :)",
+    "aboutMe": [
+      "Я — серебряная подвеска, созданная, чтобы подчеркнуть твою уникальность и стать твоей незаменимой спутницей. Добавляю изысканности и легко сочетаюсь как с деловым гардеробом, так и с повседневными нарядами. Со мной ваш деловой образ будет завершённым, а на встречах и презентациях я точно привлеку внимание. Коллеги будут в шоке от того, как гармонично мы смотримся вместе. Возьми меня с собой, и я помогу тебе переосмыслить элегантность.",
+      "Состав: серебро 925. Длина цепочки: 45 см.",
+      "Размер подвески: 2.4 см - длина, 3.3 см - высота."
+    ],
+    "myPrice": 8888,
+    "size": ["One Size"],
+    "sizeActive": "One Size",
+    "img": [
+      "img/products/necklace/img1.png",
+      "img/products/necklace/img2.png",
+      "img/products/necklace/img3.png",
+      "img/products/necklace/img4.png",
+      "img/products/necklace/img5.png",
+      "img/products/necklace/img6.png",
+      "img/products/necklace/img7.png",
+      "img/products/necklace/img8.png",
+      "img/products/necklace/img9.png",
+      "img/products/necklace/img10.png",
+      "img/products/necklace/img11.png"
+    ],
+    "bgImg": "img/products/necklace/img-bg.gif",
+    "bgText": "–  Did you have a good weekend? I spent the whole weekend doing reports. "
+  },
+  {
+    "id": 4,
+    "link": "topWhite",
+    "name": "COZY WHITE TANK TOP SLIM",
+    "waitForMe": "Отправка в течение 7 дней. Изготавливаюсь непосредственно в Санкт-Петербурге :)",
+    "aboutMe": [
+      "Легко сочетаюсь с элементами гардероба, помогая создавать разнообразные образы.",
+      "Хлопок 92%. Эластан 8 %. Немного просвечиваю!"
+    ],
+    "myPrice": 2624,
+    "size": ["S", "M", "L"],
+    "color": ["Gray", "White"],
+    "colorActive": "White",
+    "img": [
+      "img/products/topWhite/img1.png",
+      "img/products/topWhite/img2.png",
+      "img/products/topWhite/img3.png",
+      "img/products/topWhite/img4.png",
+      "img/products/topWhite/img5.png",
+      "img/products/topWhite/img6.png"
+    ],
+    "bgImg": "img/products/topWhite/img-bg.gif",
+    "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs."
+  },
+  {
+    "id": 5,
+    "link": "pants",
+    "name": "COZY OVERSIZE DARK GRAY PANTS UNISEX",
+    "waitForMe": "Без ожиданий для S, M. Отправка в течение 2-3 дней.",
+    "aboutMe": [
+      "В стиле 2000-х с боковыми карманами, эластичным поясом, верёвочками и имитацией ширинки. Я соткан из мягкого, бархатистого на ощупь трикотажа, а мой тёмно-графитовый оттенок добавляет образу утончённости. Моя ткань сохраняет свою форму и не деформируется даже после многочисленных стирок. А спереди меня украшает вышивка с названием бренда Muiraje. Идеально подхожу для того, чтобы дарить комфорт уют в те моменты, когда после долгого дня хочется расслабиться и почувствовать тепло.",
+      "Также отлично подхожу для йоги, танцев и любой активности, где важны свобода движений и удобство.",
+      "Хлопок 100%."
+    ],
+    "myPrice": 5624,
+    "size": ["S", "M", "L"],
+    "color": ["Dark gray", "Light gray"],
+    "colorActive": "Dark gray",
+    "img": [
+      "img/products/pantsDark/img1.png",
+      "img/products/pantsDark/img2.png",
+      "img/products/pantsDark/img3.png",
+      "img/products/pantsDark/img4.png",
+      "img/products/pantsDark/img5.png",
+      "img/products/pantsDark/img6.png",
+      "img/products/pantsDark/img7.png",
+      "img/products/pantsDark/img8.png",
+      "img/products/pantsDark/img9.png"
+    ],
+    "bgImg": "img/products/pantsDark/img-bg.gif",
+    "bgText": "– Where are your pants, colleague?"
+  },
+  {
+    "id": 6,
+    "link": "gloves",
+    "name": "COZY BLUE GLOVES UNISEX",
+    "waitForMe": "Без ожиданий. В наличии. Отправка в течение 2-3 дней.",
+    "aboutMe": [
+      "Мы – вязаные митенки нежного голубого цвета, созданные, чтобы согревать вас в холодную зиму и прохладные вечера в любое время года. Наша верхняя часть легко откидывается, позволяя оставлять пальцы свободными в нужный момент — будь то мгновение для идеального снимка на Nokia или тёплая чашка ароматного кофе с зефирками.",
+      "На нас изображён портрет девушки, окружённый высказываниями бизнесменов. Каждый элемент рисунка размещён так, чтобы минимизировать сгибы, сохраняя нашу форму и долговечность. Мы созданы, чтобы приносить радость как можно дольше, оставаясь вашим надёжным и вдохновляющим спутником.",
+      "Состав пряжи: 50%-шерсть, 50%-акрил."
+    ],
+    "myPrice": 2924,
+    "color": ["Phantom hope"],
+    "colorActive": "Phantom hope",
+    "img": [
+      "img/products/glovesBlue/img1.png",
+      "img/products/glovesBlue/img2.png",
+      "img/products/glovesBlue/img3.png",
+      "img/products/glovesBlue/img4.png",
+      "img/products/glovesBlue/img5.png",
+      "img/products/glovesBlue/img6.png",
+      "img/products/glovesBlue/img7.png",
+      "img/products/glovesBlue/img8.png"
+    ],
+    "bgImg": "img/products/glovesBlue/img-bg.gif",
+    "bgText": "– Can someone e-mail me that document please?"
+  },
+  {
+    "id": 7,
+    "link": "lighters",
+    "name": "COZY BLUE AND RED LIGHTERS",
+    "waitForMe": "Без ожиданий. В наличии. Доставка в любой день.",
+    "aboutMe": [
+      "Зажигалка - атрибут успешного человека, который всегда готов к вызову и может пробудить огонь в своей душе. Не забывайте о силе и мощи, которую дает вам эта маленькая, но такая значимая вещь.",
+      "Глянцевое покрытие.",
+      "(ВНИМАНИЕ!!! Доступно только доставкой “Мьюражер” по Санкт-Петербургу)."
+    ],
+    "myPrice": 224,
+    "color": ["Blue", "Red", "Black", "White"],
+    "colorActive": "Blue",
+    "img": [
+      "img/products/lightersBaR/img1.png",
+      "img/products/lightersBaR/img2.png",
+      "img/products/lightersBaR/img3.png",
+      "img/products/lightersBaR/img4.png",
+      "img/products/lightersBaR/img5.png",
+      "img/products/lightersBaR/img6.png",
+      "img/products/lightersBaR/img7.png",
+      "img/products/lightersBaR/img8.png",
+      "img/products/lightersBaR/img9.png"
+    ],
+    "bgImg": "img/products/lightersBaR/img-bg.gif",
+    "bgText": "- Did you hear Angelina got a promotion? She must have done something special..."
   }
 ]
