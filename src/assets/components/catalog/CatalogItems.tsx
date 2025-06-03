@@ -1,15 +1,26 @@
+'use client';
+
 import styles from '@/assets/styles/components/CatalogItems.module.scss';
 import Image from 'next/image';
-import catalogItems from '@/assets/data/CatalogItems.json';
 import Link from 'next/link';
+import React from 'react';
+import { useProductStore } from '@/assets/store/useProductStore';
 
 export default function CatalogItems() {
+  const { products, loadProducts } = useProductStore();
+
+  React.useEffect(() => {
+    if (products.length === 0) {
+      loadProducts();
+    }
+  }, [products.length, loadProducts]);
+
   return (
     <div className={styles.catalogItems}>
       <div className={styles.catalogItemsWrapper}>
-        {catalogItems.map((item) => (
+        {products.map((item) => (
           <article key={item.id} className={styles.catalogItem}>
-            <Link href={`/catalog/${item.link}`} className={styles.catalogItemLink}>
+            <Link href={`/catalog/${item.baseLink}`} className={styles.catalogItemLink}>
               <div className={styles.catalogItemImageWrapper}>
                 <Image
                   src={item.src}
