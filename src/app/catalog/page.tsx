@@ -11,7 +11,7 @@ export default function Catalog() {
     <>
       <main className={styles.catalog}>
         <div className={styles.catalogWrapper}>
-          <Header nav="" link="/" nameIcon="computer" />
+          <Header nav="" link="/" nameIcon="computer" color='gradient'/>
           <NavigationBar />
           <CatalogBar />
           <CatalogItems />

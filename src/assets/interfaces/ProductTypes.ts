@@ -5,12 +5,12 @@ export interface ProductVariant {
   aboutMe?: string[];
   myPrice?: number;
   size?: string[];
-  color?: string[] | null;
   colorActive?: string | null;
   length?: string[] | null;
   img?: string[];
   bgImg?: string;
   bgText?: string;
+  bgPos?: string;
 }
 
 export interface Product {
@@ -21,5 +21,6 @@ export interface Product {
   price: number;
   src: string;
   srcHover?: string | null;
+  color?: string[] | null;
   variants?: ProductVariant[];
 }

@@ -1,0 +1,171 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.productItem {
+  background: linear-gradient(180deg, $blue-2 22%, $black 89%);
+  color: $white;
+  font-size: 22px;
+  font-family: $SwissSiena;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  text-shadow:
+    0 1.86px 1.86px $black,
+    0 0.93px 0 $black,
+    0.93px 0 0 $black;
+}
+
+.productItemWrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 40px 60px;
+
+  flex-grow: 1;
+}
+
+.productItemTitle {
+  font-size: 58px;
+
+  text-shadow:
+    0 0 5px $black,
+    0 2px 2px $black,
+    0 1px 0 $black,
+    1px 0 0 $black;
+}
+
+.productItemContent {
+  position: relative;
+  z-index: 2;
+
+  @include flex;
+  gap: 20px;
+}
+
+.productItemCarousel {
+  flex: 1 0;
+  max-width: 450px;
+}
+
+.carouselMain {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.carouselButton {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+
+  &:last-child {
+    left: auto;
+    right: 10px;
+  }
+}
+
+.productItemDetails {
+  flex: 1 1;
+}
+
+.vertical {
+  max-width: 600px;
+}
+
+.horizontal {
+  max-width: 800px;
+}
+
+.productItemImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.carouselThumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.thumbnailImage {
+  width: 82px;
+  height: auto;
+}
+
+.productItemWait {
+  margin-bottom: 15px;
+}
+
+.productItemAbout {
+  margin-bottom: 15px;
+}
+
+.productItemBtnCart {
+  @include border--white--dark-grey;
+  background-color: $dark-grey-3;
+  border-width: 3px;
+  color: $black;
+  font-size: 28px;
+
+  display: block;
+  margin: 0 auto;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $light-grey;
+  }
+
+  &:active {
+    background-color: $dark-grey-3;
+    @include border--dark-grey--white;
+
+    div {
+      border-bottom: none;
+      border-right: none;
+      border-top: 3px solid $dark-grey-2;
+      border-left: 3px solid $dark-grey-2;
+
+      padding: 5px 18px 8px 15px;
+    }
+  }
+
+  div {
+    border-bottom: 3px solid $dark-grey-2;
+    border-right: 3px solid $dark-grey-2;
+
+    padding: 8px 15px 5px 18px;
+  }
+}
+
+.productItemBgWrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.productItemBgImage {
+  width: auto;
+  height: 400px;
+
+  &.bgVertical {
+    height: 800px;
+  }
+
+  &.bgHorizontal {
+    height: 400px;
+  }
+}
+
+.productItemBgText {
+  position: absolute;
+  font-size: 25px;
+  right: 12%;
+  bottom: 50%;
+  max-width: 80px;
+
+  text-shadow: $shadow-2;
+}

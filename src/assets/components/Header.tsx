@@ -8,9 +8,10 @@ interface HeaderProps {
   nav: string;
   link?: string;
   nameIcon: IconName;
+  color: string;
 }
 
-export const Header = ({ nav, link, nameIcon }: HeaderProps) => {
+export const Header = ({ nav, link, nameIcon, color }: HeaderProps) => {
   const router = useRouter();
 
   const clickRedirect = () => {
@@ -18,13 +19,13 @@ export const Header = ({ nav, link, nameIcon }: HeaderProps) => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${styles[color]}`}>
       <div className={styles.logoWrapper}>
         <Icon name={nameIcon} width={37} />
         <div className={styles.logoText}>
-          <h1 className={styles.logoTitle}>
+          <div className={styles.logoTitle}>
             <span>M</span>uiraje
-          </h1>
+          </div>
           <div className={styles.logoSupTitle}>8+8+8</div>
           {nav && <div className={styles.logoNav}>{nav}</div>}
         </div>

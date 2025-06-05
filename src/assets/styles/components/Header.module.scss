@@ -8,6 +8,14 @@
   justify-content: space-between;
   align-items: center;
 
+  &.gradient {
+    background: linear-gradient(90deg, #000c78 0%, #b5b5b5 82%);
+  }
+
+  &.gray {
+    background: $dark-grey-3;
+  }
+
   @media (max-width: $tablet) {
     padding: 1px 1px 1px 5px;
   }
@@ -80,6 +88,10 @@
     margin-bottom: 3px;
     text-shadow: $shadow-header-top-mobile;
   }
+}
+
+.logoNav {
+  text-transform: capitalize;
 }
 
 .headerButtons {
@@ -179,7 +191,7 @@
 
   @media (max-width: $small-mobile) {
     width: 12px;
-    height: 12px; 
+    height: 12px;
 
     border-top: 1px solid $white;
     border-left: 1px solid $white;

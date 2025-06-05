@@ -18,22 +18,20 @@
         ],
         "myPrice": 4824,
         "size": ["S", "M", "L", "XL", "XXL"],
-        "color": null,
-        "colorActive": null,
-        "length": null,
         "img": [
-          "img/products/hoodie/img1.png",
-          "img/products/hoodie/img2.png",
-          "img/products/hoodie/img3.png",
-          "img/products/hoodie/img4.png",
-          "img/products/hoodie/img5.png",
-          "img/products/hoodie/img6.png",
-          "img/products/hoodie/img7.png",
-          "img/products/hoodie/img8.png",
-          "img/products/hoodie/img9.png"
+          "/img/products/hoodie/img1.jpg",
+          "/img/products/hoodie/img2.jpg",
+          "/img/products/hoodie/img3.jpg",
+          "/img/products/hoodie/img4.jpg",
+          "/img/products/hoodie/img5.jpg",
+          "/img/products/hoodie/img6.jpg",
+          "/img/products/hoodie/img7.jpg",
+          "/img/products/hoodie/img8.jpg",
+          "/img/products/hoodie/img9.jpg"
         ],
-        "bgImg": "img/products/hoodie/img-bg.gif",
-        "bgText": "– Your boss is gonna love it!"
+        "bgImg": "/img/products/hoodie/img-bg.gif",
+        "bgText": "– Your boss is gonna love it!",
+        "bgPos": "vertical"
       }
     ]
   },
@@ -45,6 +43,7 @@
     "price": 5624,
     "src": "/img/catalog/clothes/pantFront.png",
     "srcHover": "/img/catalog/clothes/pantBack.png",
+    "color": ["Dark gray", "Light gray"],
     "variants": [
       {
         "link": "pants",
@@ -57,21 +56,22 @@
         ],
         "myPrice": 5624,
         "size": ["S", "M", "L"],
-        "color": ["Dark gray", "Light gray"],
+        "color": ["Dark gray"],
         "colorActive": "Dark gray",
         "img": [
-          "img/products/pantsDark/img1.png",
-          "img/products/pantsDark/img2.png",
-          "img/products/pantsDark/img3.png",
-          "img/products/pantsDark/img4.png",
-          "img/products/pantsDark/img5.png",
-          "img/products/pantsDark/img6.png",
-          "img/products/pantsDark/img7.png",
-          "img/products/pantsDark/img8.png",
-          "img/products/pantsDark/img9.png"
+          "/img/products/pantsDark/img1.jpg",
+          "/img/products/pantsDark/img2.jpg",
+          "/img/products/pantsDark/img3.jpg",
+          "/img/products/pantsDark/img4.jpg",
+          "/img/products/pantsDark/img5.jpg",
+          "/img/products/pantsDark/img6.jpg",
+          "/img/products/pantsDark/img7.jpg",
+          "/img/products/pantsDark/img8.jpg",
+          "/img/products/pantsDark/img9.jpg"
         ],
-        "bgImg": "img/products/pantsDark/img-bg.gif",
-        "bgText": "– Where are your pants, colleague?"
+        "bgImg": "/img/products/pantsDark/img-bg.gif",
+        "bgText": "– Where are your pants, colleague?",
+        "bgPos": "horizontal"
       },
       {
         "link": "pantsLight",
@@ -86,19 +86,20 @@
         ],
         "myPrice": 5824,
         "size": ["M", "L"],
-        "color": ["Dark gray", "Light gray"],
+        "color": ["Light gray"],
         "colorActive": "Light gray",
         "img": [
-          "img/products/pantsLight/img1.png",
-          "img/products/pantsLight/img2.png",
-          "img/products/pantsLight/img3.png",
-          "img/products/pantsLight/img4.png",
-          "img/products/pantsLight/img5.png",
-          "img/products/pantsLight/img6.png",
-          "img/products/pantsLight/img7.png"
+          "/img/products/pantsLight/img1.jpg",
+          "/img/products/pantsLight/img2.jpg",
+          "/img/products/pantsLight/img3.jpg",
+          "/img/products/pantsLight/img4.jpg",
+          "/img/products/pantsLight/img5.jpg",
+          "/img/products/pantsLight/img6.jpg",
+          "/img/products/pantsLight/img7.jpg"
         ],
-        "bgImg": "img/products/pantsLight/img-bg.gif",
-        "bgText": "– Where are your pants, colleague?"
+        "bgImg": "/img/products/pantsLight/img-bg.gif",
+        "bgText": "– Where are your pants, colleague?",
+        "bgPos": "horizontal"
       }
     ]
   },
@@ -110,6 +111,7 @@
     "price": 2624,
     "src": "/img/catalog/clothes/topFront.png",
     "srcHover": "/img/catalog/clothes/topBack.png",
+    "color": ["Gray", "White"],
     "variants": [
       {
         "link": "top",
@@ -123,18 +125,19 @@
         "myPrice": 2624,
         "size": ["S", "M", "L", "XL"],
         "length": ["57-58", "64-65", "71-72"],
-        "color": ["Gray", "White"],
+        "color": ["Gray"],
         "colorActive": "Gray",
         "img": [
-          "img/products/top/img1.png",
-          "img/products/top/img2.png",
-          "img/products/top/img3.png",
-          "img/products/top/img4.png",
-          "img/products/top/img5.png",
-          "img/products/top/img6.png"
+          "/img/products/top/img1.jpg",
+          "/img/products/top/img2.jpg",
+          "/img/products/top/img3.jpg",
+          "/img/products/top/img4.jpg",
+          "/img/products/top/img5.jpg",
+          "/img/products/top/img6.jpg"
         ],
-        "bgImg": "img/products/top/img-bg.gif",
-        "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs."
+        "bgImg": "/img/products/top/img-bg.gif",
+        "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs.",
+        "bgPos": "vertical"
       },
       {
         "link": "topWhite",
@@ -147,18 +150,19 @@
         "myPrice": 2624,
         "size": ["S", "M", "L"],
         "length": null,
-        "color": ["Gray", "White"],
+        "color": ["White"],
         "colorActive": "White",
         "img": [
-          "img/products/topWhite/img1.png",
-          "img/products/topWhite/img2.png",
-          "img/products/topWhite/img3.png",
-          "img/products/topWhite/img4.png",
-          "img/products/topWhite/img5.png",
-          "img/products/topWhite/img6.png"
+          "/img/products/topWhite/img1.jpg",
+          "/img/products/topWhite/img2.jpg",
+          "/img/products/topWhite/img3.jpg",
+          "/img/products/topWhite/img4.jpg",
+          "/img/products/topWhite/img5.jpg",
+          "/img/products/topWhite/img6.jpg"
         ],
-        "bgImg": "img/products/topWhite/img-bg.gif",
-        "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs."
+        "bgImg": "/img/products/topWhite/img-bg.gif",
+        "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs.",
+        "bgPos": "vertical"
       }
     ]
   },
@@ -170,6 +174,7 @@
     "price": 2924,
     "src": "/img/catalog/clothes/glovesFront.png",
     "srcHover": "/img/catalog/clothes/glovesBack.png",
+    "color": ["Phantom hope"],
     "variants": [
       {
         "link": "gloves",
@@ -184,17 +189,18 @@
         "color": ["Phantom hope"],
         "colorActive": "Phantom hope",
         "img": [
-          "img/products/glovesBlue/img1.png",
-          "img/products/glovesBlue/img2.png",
-          "img/products/glovesBlue/img3.png",
-          "img/products/glovesBlue/img4.png",
-          "img/products/glovesBlue/img5.png",
-          "img/products/glovesBlue/img6.png",
-          "img/products/glovesBlue/img7.png",
-          "img/products/glovesBlue/img8.png"
+          "/img/products/glovesBlue/img1.jpg",
+          "/img/products/glovesBlue/img2.jpg",
+          "/img/products/glovesBlue/img3.jpg",
+          "/img/products/glovesBlue/img4.jpg",
+          "/img/products/glovesBlue/img5.jpg",
+          "/img/products/glovesBlue/img6.jpg",
+          "/img/products/glovesBlue/img7.jpg",
+          "/img/products/glovesBlue/img8.jpg"
         ],
-        "bgImg": "img/products/glovesBlue/img-bg.gif",
-        "bgText": "– Can someone e-mail me that document please?"
+        "bgImg": "/img/products/glovesBlue/img-bg.gif",
+        "bgText": "– Can someone e-mail me that document please?",
+        "bgPos": "horizontal"
       }
     ]
   },
@@ -220,20 +226,21 @@
         "size": ["One Size"],
         "sizeActive": "One Size",
         "img": [
-          "img/products/necklace/img1.png",
-          "img/products/necklace/img2.png",
-          "img/products/necklace/img3.png",
-          "img/products/necklace/img4.png",
-          "img/products/necklace/img5.png",
-          "img/products/necklace/img6.png",
-          "img/products/necklace/img7.png",
-          "img/products/necklace/img8.png",
-          "img/products/necklace/img9.png",
-          "img/products/necklace/img10.png",
-          "img/products/necklace/img11.png"
+          "/img/products/necklace/img1.jpg",
+          "/img/products/necklace/img2.jpg",
+          "/img/products/necklace/img3.jpg",
+          "/img/products/necklace/img4.jpg",
+          "/img/products/necklace/img5.jpg",
+          "/img/products/necklace/img6.jpg",
+          "/img/products/necklace/img7.jpg",
+          "/img/products/necklace/img8.jpg",
+          "/img/products/necklace/img9.jpg",
+          "/img/products/necklace/img10.jpg",
+          "/img/products/necklace/img11.jpg"
         ],
-        "bgImg": "img/products/necklace/img-bg.gif",
-        "bgText": "– Did you have a good weekend? I spent the whole weekend doing reports."
+        "bgImg": "/img/products/necklace/img-bg.gif",
+        "bgText": "– Did you have a good weekend? I spent the whole weekend doing reports.",
+        "bgPos": "vertical"
       }
     ]
   },
@@ -245,9 +252,10 @@
     "price": 224,
     "src": "/img/catalog/clothes/lightersFront.png",
     "srcHover": "/img/catalog/clothes/lightersBack.png",
+    "color": ["Blue", "Red", "Black", "White"],
     "variants": [
       {
-        "link": "lightersBaR",
+        "link": "lighters",
         "name": "COZY BLACK AND WHITE LIGHTERS",
         "waitForMe": "Без ожиданий. В наличии. Доставка в любой день.",
         "aboutMe": [
@@ -256,21 +264,22 @@
           "(ВНИМАНИЕ!!! Доступно только доставкой 'Мьюражер' по Санкт-Петербургу)."
         ],
         "myPrice": 224,
-        "color": ["Blue", "Red", "Black", "White"],
+        "color": ["Blue", "Red"],
         "colorActive": "Blue",
         "img": [
-          "img/products/lightersBaR/img1.png",
-          "img/products/lightersBaR/img2.png",
-          "img/products/lightersBaR/img3.png",
-          "img/products/lightersBaR/img4.png",
-          "img/products/lightersBaR/img5.png",
-          "img/products/lightersBaR/img6.png",
-          "img/products/lightersBaR/img7.png",
-          "img/products/lightersBaR/img8.png",
-          "img/products/lightersBaR/img9.png"
+          "/img/products/lightersBaR/img1.png",
+          "/img/products/lightersBaR/img2.jpg",
+          "/img/products/lightersBaR/img3.jpg",
+          "/img/products/lightersBaR/img4.jpg",
+          "/img/products/lightersBaR/img5.jpg",
+          "/img/products/lightersBaR/img6.jpg",
+          "/img/products/lightersBaR/img7.jpg",
+          "/img/products/lightersBaR/img8.jpg",
+          "/img/products/lightersBaR/img9.jpg"
         ],
-        "bgImg": "img/products/lightersBaR/img-bg.gif",
-        "bgText": "- Did you hear Angelina got a promotion? She must have done something special..."
+        "bgImg": "/img/products/lightersBaR/img-bg.gif",
+        "bgText": "- Did you hear Angelina got a promotion? She must have done something special...",
+        "bgPos": "vertical"
       },
       {
         "link": "lightersBaW",
@@ -282,21 +291,23 @@
           "(ВНИМАНИЕ!!! Доступно только доставкой 'Мьюражер' по Санкт-Петербургу)."
         ],
         "myPrice": 224,
-        "color": ["Blue", "Red", "Black", "White"],
+        "color": ["Black", "White"],
         "colorActive": "Black",
         "img": [
-          "img/products/lightersBaW/img1.png",
-          "img/products/lightersBaW/img2.png",
-          "img/products/lightersBaW/img3.png",
-          "img/products/lightersBaW/img4.png",
-          "img/products/lightersBaW/img5.png",
-          "img/products/lightersBaW/img6.png",
-          "img/products/lightersBaW/img7.png",
-          "img/products/lightersBaW/img8.png",
-          "img/products/lightersBaW/img9.png"
+          "/img/products/lightersBaW/img1.png",
+          "/img/products/lightersBaW/img2.jpg",
+          "/img/products/lightersBaW/img3.jpg",
+          "/img/products/lightersBaW/img4.jpg",
+          "/img/products/lightersBaW/img5.jpg",
+          "/img/products/lightersBaW/img6.jpg",
+          "/img/products/lightersBaW/img7.jpg",
+          "/img/products/lightersBaW/img8.jpg",
+    
+          "/img/products/lightersBaW/img9.jpg"
         ],
-        "bgImg": "img/products/lightersBaW/img-bg.gif",
-        "bgText": "- Did you hear Angelina got a promotion? She must have done something special..."
+        "bgImg": "/img/products/lightersBaW/img-bg.gif",
+        "bgText": "- Did you hear Angelina got a promotion? She must have done something special...",
+        "bgPos": "vertical"
       }
     ]
   }
