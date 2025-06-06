@@ -5,6 +5,7 @@ export interface ProductVariant {
   aboutMe?: string[];
   myPrice?: number;
   size?: string[];
+  color?: string[] | null;
   colorActive?: string | null;
   length?: string[] | null;
   img?: string[];
