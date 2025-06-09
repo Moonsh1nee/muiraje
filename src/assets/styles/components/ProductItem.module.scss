@@ -65,6 +65,11 @@
     left: auto;
     right: 10px;
   }
+
+  & > img {
+    width: 24px;
+    height: auto;
+  }
 }
 
 .productItemImage {

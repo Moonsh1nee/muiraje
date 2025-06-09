@@ -9,9 +9,11 @@ interface HeaderProps {
   link?: string;
   nameIcon: IconName;
   color: string;
+  width?: number;
+  height?: number;
 }
 
-export const Header = ({ nav, link, nameIcon, color }: HeaderProps) => {
+export const Header = ({ nav, link, nameIcon, color, width = 37, height = 37 }: HeaderProps) => {
   const router = useRouter();
 
   const clickRedirect = () => {
@@ -21,7 +23,7 @@ export const Header = ({ nav, link, nameIcon, color }: HeaderProps) => {
   return (
     <header className={`${styles.header} ${styles[color]}`}>
       <div className={styles.logoWrapper}>
-        <Icon name={nameIcon} width={37} />
+        <Icon name={nameIcon} width={width} height={height} />
         <div className={styles.logoText}>
           <div className={styles.logoTitle}>
             <span>M</span>uiraje

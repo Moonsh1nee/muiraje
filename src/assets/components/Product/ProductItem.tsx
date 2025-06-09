@@ -52,6 +52,8 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
           link={'/catalog'}
           nameIcon="people"
           color="gray"
+          width={30}
+          height={43}
         />
         {/* TODO: Add a btn to the catalog page */}
         <div className={styles.productItemWrapper}>
@@ -66,7 +68,7 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                   className={styles.carouselButton}
                   onClick={handlePrevImage}
                   disabled={!initialVariant.img || initialVariant.img.length <= 1}>
-                  <Image src={'/img/icons/arrLeft.svg'} alt="Previous" width={24} height={24} />
+                  <Image src={'/img/icons/arrLeft.svg'} alt="Previous" width={41} height={37} />
                 </button>
                 <div className={styles.carouselMainImage}>
                   {Array.isArray(initialVariant.img) && initialVariant.img.length > 0 ? (
@@ -77,6 +79,7 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                       width={4096}
                       height={4096}
                       priority={currentImageIndex === 0}
+                      loading={'eager'}
                     />
                   ) : (
                     <Image
@@ -92,7 +95,7 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                   className={styles.carouselButton}
                   onClick={handleNextImage}
                   disabled={!initialVariant.img || initialVariant.img.length <= 1}>
-                  <Image src={'/img/icons/arrRight.svg'} alt="Previous" width={24} height={24} />
+                  <Image src={'/img/icons/arrRight.svg'} alt="Previous" width={41} height={33} />
                 </button>
               </div>
               <div
@@ -214,8 +217,8 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                 className={`${styles.productItemBgImage} ${
                   initialVariant.bgPos === 'vertical' ? styles.bgVertical : styles.bgHorizontal
                 }`}
-                width={400}
-                height={400}
+                width={1697}
+                height={1200}
               />
               {initialVariant.bgText && (
                 <div className={styles.productItemBgText}>{initialVariant.bgText}</div>
