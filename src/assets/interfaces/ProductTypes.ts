@@ -1,9 +1,9 @@
 export interface ProductVariant {
   link: string;
-  name?: string;
+  name: string;
   waitForMe?: string;
   aboutMe?: string[];
-  myPrice?: number;
+  myPrice: number;
   size?: string[];
   color?: string[] | null;
   colorActive?: string | null;
@@ -11,7 +11,8 @@ export interface ProductVariant {
   img?: string[];
   bgImg?: string;
   bgText?: string;
-  bgPos?: string;
+  bgWidth?: number;
+  bgHeight?: number;
 }
 
 export interface Product {
@@ -23,5 +24,5 @@ export interface Product {
   src: string;
   srcHover?: string | null;
   color?: string[] | null;
-  variants?: ProductVariant[];
+  variants: ProductVariant[];
 }

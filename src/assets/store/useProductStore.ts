@@ -1,16 +1,25 @@
 import { create } from 'zustand';
-import productsData from '@/assets/data/Products.json';
-import { Product} from '@/assets/interfaces/ProductTypes';
+import { Product, ProductVariant} from '@/assets/interfaces/ProductTypes';
 
 interface ProductState {
   products: Product[];
-  loadProducts: () => void;
+  isLoading: boolean;
+  error: string | null;
+  loadProducts: () => Promise<void>;
+  getProductByBaseLink: (baseLink: string) => Product | undefined;
+  getVariantByLink: (baseLink: string) => ProductVariant | undefined;
 }
 
-export const useProductStore = create<ProductState>((set) => ({
+export const useProductStore = create<ProductState>((set, get) => ({
   products: [],
-  loadProducts: () => {
+  isLoading: true,
+  error: null,
+  loadProducts: async () => {
     try {
+      set({ isLoading: true, error: null });
+      const productsData = await import('@/assets/data/Products.json').then(
+        (mod) => mod.default
+      );
       const products: Product[] = productsData
         .map((item) => ({
           id: item.id,
@@ -23,9 +32,20 @@ export const useProductStore = create<ProductState>((set) => ({
           color: item.color ?? null,
           variants: item.variants || [],
         }));
-      set({ products,});
+        set({ products, isLoading: false });
     } catch (err) {
+      set({ error: 'Failed to load products', isLoading: false });
       console.error('Failed to load products:', err);
     }
-  }
+  },
+  getProductByBaseLink: (baseLink: string) =>
+    get().products.find(
+      (p) => p.baseLink === baseLink || p.variants.some((v) => v.link === baseLink)
+    ),
+  getVariantByLink: (baseLink: string) => {
+    const product = get().products.find((p) =>
+      p.variants.some((v) => v.link === baseLink)
+    );
+    return product?.variants.find((v) => v.link === baseLink) || product?.variants[0];
+  },
 }));

@@ -31,7 +31,8 @@
         ],
         "bgImg": "/img/products/hoodie/img-bg.gif",
         "bgText": "– Your boss is gonna love it!",
-        "bgPos": "vertical"
+        "bgWidth": 450,
+        "bgHeight": 800
       }
     ]
   },
@@ -71,7 +72,8 @@
         ],
         "bgImg": "/img/products/pantsDark/img-bg.gif",
         "bgText": "– Where are your pants, colleague?",
-        "bgPos": "horizontal"
+        "bgWidth": 500,
+        "bgHeight": 400
       },
       {
         "link": "pantsLight",
@@ -99,7 +101,8 @@
         ],
         "bgImg": "/img/products/pantsLight/img-bg.gif",
         "bgText": "– Where are your pants, colleague?",
-        "bgPos": "horizontal"
+        "bgWidth": 450,
+        "bgHeight": 800
       }
     ]
   },
@@ -137,7 +140,8 @@
         ],
         "bgImg": "/img/products/top/img-bg.gif",
         "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs.",
-        "bgPos": "vertical"
+        "bgWidth": 450,
+        "bgHeight": 800
       },
       {
         "link": "topWhite",
@@ -162,7 +166,8 @@
         ],
         "bgImg": "/img/products/topWhite/img-bg.gif",
         "bgText": "– I want to go on vacation. I just want to lie on the beach and eat hot dogs.",
-        "bgPos": "vertical"
+        "bgWidth": 450,
+        "bgHeight": 800
       }
     ]
   },
@@ -252,11 +257,11 @@
     "price": 224,
     "src": "/img/catalog/clothes/lightersFront.png",
     "srcHover": "/img/catalog/clothes/lightersBack.png",
-    "color": ["Blue", "Red", "Black", "White"],
+    "color": ["Blue Red", "Black White"],
     "variants": [
       {
         "link": "lighters",
-        "name": "COZY BLACK AND WHITE LIGHTERS",
+        "name": "COZY BLUE AND RED LIGHTERS",
         "waitForMe": "Без ожиданий. В наличии. Доставка в любой день.",
         "aboutMe": [
           "Зажигалка - атрибут успешного человека, который всегда готов к вызову и может пробудить огонь в своей душе. Не забывайте о силе и мощи, которую дает вам эта маленькая, но такая значимая вещь.",
@@ -264,8 +269,8 @@
           "(ВНИМАНИЕ!!! Доступно только доставкой 'Мьюражер' по Санкт-Петербургу)."
         ],
         "myPrice": 224,
-        "color": ["Blue", "Red"],
-        "colorActive": "Blue",
+        "color": ["Blue Red"],
+        "colorActive": "Blue Red",
         "img": [
           "/img/products/lightersBaR/img1.png",
           "/img/products/lightersBaR/img2.jpg",
@@ -291,8 +296,8 @@
           "(ВНИМАНИЕ!!! Доступно только доставкой 'Мьюражер' по Санкт-Петербургу)."
         ],
         "myPrice": 224,
-        "color": ["Black", "White"],
-        "colorActive": "Black",
+        "color": ["Black White"],
+        "colorActive": "Black White",
         "img": [
           "/img/products/lightersBaW/img1.png",
           "/img/products/lightersBaW/img2.jpg",
@@ -302,7 +307,6 @@
           "/img/products/lightersBaW/img6.jpg",
           "/img/products/lightersBaW/img7.jpg",
           "/img/products/lightersBaW/img8.jpg",
-    
           "/img/products/lightersBaW/img9.jpg"
         ],
         "bgImg": "/img/products/lightersBaW/img-bg.gif",

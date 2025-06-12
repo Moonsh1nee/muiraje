@@ -1,22 +1,44 @@
 'use client';
 
-import { Product, ProductVariant } from '@/assets/interfaces/ProductTypes';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
 import React from 'react';
 import styles from '@/assets/styles/components/ProductItem.module.scss';
 import { Header } from '../Header';
+import { useProductStore } from '@/assets/store/useProductStore';
+import CarouselMain from './Carousel';
+import { useCartStore } from '@/assets/store/useCartStore';
+import ModalBtnErr from './ModalBtnErr';
 
-interface ProductItemProps {
-  baseLink: string;
-  product: Product;
-  initialVariant: ProductVariant;
-}
-
-export default function ProductItem({ baseLink, product, initialVariant }: ProductItemProps) {
+export default function ProductItem({ baseLink }: { baseLink: string }) {
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
   const [isNonActiveHovered, setIsNonActiveHovered] = React.useState(false);
+  const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
+  const [selectedLength, setSelectedLength] = React.useState<string | null>(null);
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isModalText, setIsModalText] = React.useState('');
+
+  const { products, loadProducts, getProductByBaseLink, getVariantByLink, isLoading, error } =
+    useProductStore();
+  const { addToCart } = useCartStore();
+
+  React.useEffect(() => {
+    if (products.length === 0 && isLoading) {
+      loadProducts();
+    }
+  }, [products.length, isLoading, loadProducts]);
+
+  const product = getProductByBaseLink(baseLink);
+  const initialVariant = getVariantByLink(baseLink);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error || !product || !initialVariant) {
+    return notFound();
+  }
 
   const handleVariantChange = (variantLink: string) => {
     router.push(`/catalog/${variantLink}`);
@@ -44,9 +66,39 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
     setIsNonActiveHovered(false);
   };
 
+  const handleAddToCart = () => {
+    if (initialVariant.size && !selectedSize) {
+      setIsModalOpen(true);
+      setIsModalText('Сначала нужно выбрать размер!');
+      return;
+    }
+    if (initialVariant.length && !selectedLength) {
+      setIsModalOpen(true);
+      setIsModalText('Сначала нужно выбрать длину!');
+      return;
+    }
+    addToCart({
+      productId: product.id,
+      image: initialVariant.img?.[0] || product.src,
+      name: initialVariant.name || product.name,
+      link: initialVariant.link,
+      price: initialVariant.myPrice,
+      color: initialVariant.colorActive,
+      size: selectedSize,
+      length: selectedLength,
+      quantity: 1,
+    });
+    alert('Added to cart!');
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsModalText('');
+  };
+
   return (
     <>
-      <main className={styles.productItem}>
+      <main className={`${styles.productItem} ${isModalOpen ? styles.modalOpen : ''}`}>
         <Header
           nav={`Catalog/${product.baseLink}`}
           link={'/catalog'}
@@ -55,53 +107,22 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
           width={30}
           height={43}
         />
-        {/* TODO: Add a btn to the catalog page */}
         <div className={styles.productItemWrapper}>
           {initialVariant.name && (
             <h1 className={styles.productItemTitle}>{initialVariant.name}</h1>
           )}
 
           <div className={styles.productItemContent}>
-            <div className={styles.productItemContentUpper}>
-              <div className={styles.carouselMain}>
-                <button
-                  className={styles.carouselButton}
-                  onClick={handlePrevImage}
-                  disabled={!initialVariant.img || initialVariant.img.length <= 1}>
-                  <Image src={'/img/icons/arrLeft.svg'} alt="Previous" width={41} height={37} />
-                </button>
-                <div className={styles.carouselMainImage}>
-                  {Array.isArray(initialVariant.img) && initialVariant.img.length > 0 ? (
-                    <Image
-                      src={initialVariant.img[currentImageIndex]}
-                      alt={`${product.name} - ${currentImageIndex + 1}`}
-                      className={styles.productItemImage}
-                      width={4096}
-                      height={4096}
-                      priority={currentImageIndex === 0}
-                      loading={'eager'}
-                    />
-                  ) : (
-                    <Image
-                      src="/img/fallback.png"
-                      alt={product.name}
-                      className={styles.productItemImage}
-                      width={4096}
-                      height={4096}
-                    /> // TODO: Add a fallback image
-                  )}
-                </div>
-                <button
-                  className={styles.carouselButton}
-                  onClick={handleNextImage}
-                  disabled={!initialVariant.img || initialVariant.img.length <= 1}>
-                  <Image src={'/img/icons/arrRight.svg'} alt="Previous" width={41} height={33} />
-                </button>
-              </div>
-              <div
-                className={`${styles.productItemDetails} ${
-                  initialVariant.bgPos ? styles[initialVariant.bgPos] : ''
-                }`}>
+            <CarouselMain
+              productName={product.name}
+              images={initialVariant.img}
+              currentImageIndex={currentImageIndex}
+              onPrevImage={handlePrevImage}
+              onNextImage={handleNextImage}
+              handleThumbnailClick={handleThumbnailClick}
+            />
+            <div className={`${styles.productItemDetails} ${styles[product.baseLink]}`}>
+              <div className={styles.productItemDescription}>
                 {initialVariant.waitForMe && (
                   <div className={styles.productItemWait}>
                     <p>WAIT FOR ME:</p>
@@ -125,32 +146,9 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                   </div>
                 )}
               </div>
-            </div>
-
-            <div className={styles.productItemContentLower}>
-              {Array.isArray(initialVariant.img) && initialVariant.img.length > 1 && (
-                <div className={styles.carouselThumbnails}>
-                  {initialVariant.img.map((img, index) => (
-                    <button
-                      key={index}
-                      className={`${styles.thumbnail} ${
-                        index === currentImageIndex ? styles.active : ''
-                      }`}
-                      onClick={() => handleThumbnailClick(index)}>
-                      <Image
-                        src={img}
-                        alt={`${product.name} - Thumbnail ${index + 1}`}
-                        width={4096}
-                        height={4096}
-                        className={styles.thumbnailImage}
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
 
               <div className={styles.productItemInfo}>
-                <button className={styles.productItemBtnCart}>
+                <button className={styles.productItemBtnCart} onClick={handleAddToCart}>
                   <div>I want it!</div>
                 </button>
 
@@ -159,7 +157,12 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                     <p>Choose your size:</p>
                     <div className={styles.productItemSizeOptions}>
                       {initialVariant.size.map((size, index) => (
-                        <button key={index} className={styles.productItemSizeOption}>
+                        <button
+                          key={index}
+                          className={`${styles.productItemSizeOption} ${
+                            selectedSize === size ? styles.productItemSizeOptionActive : ''
+                          }`}
+                          onClick={() => setSelectedSize(size)}>
                           {size}
                         </button>
                       ))}
@@ -172,7 +175,12 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                     <p>Choose the length:</p>
                     <div className={styles.productItemLengthOptions}>
                       {initialVariant.length.map((length, index) => (
-                        <button key={index} className={styles.productItemLengthOption}>
+                        <button
+                          key={index}
+                          className={`${styles.productItemLengthOption} ${
+                            selectedLength === length ? styles.productItemLengthOptionActive : ''
+                          }`}
+                          onClick={() => setSelectedLength(length)}>
                           {length}
                         </button>
                       ))}
@@ -188,7 +196,7 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
                         isNonActiveHovered ? styles.hovered : ''
                       }`}>
                       {product.color.map((color) => {
-                        const variant = product.variants?.find((v) => v.color?.includes(color));
+                        const variant = product.variants.find((v) => v.color?.includes(color));
                         const targetVariantLink = variant ? variant.link : baseLink;
                         const isActive = initialVariant.colorActive === color;
                         return (
@@ -208,17 +216,15 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
               </div>
             </div>
           </div>
-
           {initialVariant.bgImg && (
-            <div className={styles.productItemBgWrapper}>
+            <div className={`${styles.productItemBgWrapper} ${styles[product.baseLink]}`}>
               <Image
                 src={initialVariant.bgImg}
                 alt={product.name}
-                className={`${styles.productItemBgImage} ${
-                  initialVariant.bgPos === 'vertical' ? styles.bgVertical : styles.bgHorizontal
-                }`}
-                width={1697}
-                height={1200}
+                className={styles.productItemBgImage}
+                width={initialVariant.bgWidth || 1000}
+                height={initialVariant.bgHeight || 1200}
+                unoptimized
               />
               {initialVariant.bgText && (
                 <div className={styles.productItemBgText}>{initialVariant.bgText}</div>
@@ -227,6 +233,7 @@ export default function ProductItem({ baseLink, product, initialVariant }: Produ
           )}
         </div>
       </main>
+      {isModalOpen && <ModalBtnErr text={isModalText} closeModal={closeModal} />}
     </>
   );
 }
