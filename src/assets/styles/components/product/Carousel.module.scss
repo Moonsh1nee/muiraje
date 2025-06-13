@@ -50,7 +50,6 @@
       left: auto;
       right: 5px;
     }
-    
   }
 
   @media (max-width: 420px) {
@@ -109,6 +108,7 @@
   opacity: 0;
   transition: all 0.3s ease-in-out;
   animation: fadeIn 0.3s ease-in-out forwards;
+  cursor: pointer;
 }
 
 .carouselThumbnails {

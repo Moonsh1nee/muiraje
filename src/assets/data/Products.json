@@ -205,7 +205,8 @@
         ],
         "bgImg": "/img/products/glovesBlue/img-bg.gif",
         "bgText": "– Can someone e-mail me that document please?",
-        "bgPos": "horizontal"
+        "bgWidth": 710,
+        "bgHeight": 300
       }
     ]
   },
@@ -245,7 +246,8 @@
         ],
         "bgImg": "/img/products/necklace/img-bg.gif",
         "bgText": "– Did you have a good weekend? I spent the whole weekend doing reports.",
-        "bgPos": "vertical"
+        "bgWidth": 200,
+        "bgHeight": 750
       }
     ]
   },
@@ -311,7 +313,8 @@
         ],
         "bgImg": "/img/products/lightersBaW/img-bg.gif",
         "bgText": "- Did you hear Angelina got a promotion? She must have done something special...",
-        "bgPos": "vertical"
+        "bgWidth": 350,
+        "bgHeight": 400
       }
     ]
   }

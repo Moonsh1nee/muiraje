@@ -1,24 +1,20 @@
-import styles from '@/assets/styles/components/product/Carousel.module.scss';
+import styles from '@/assets/styles/components/product/FullPhoto.module.scss';
 import Image from 'next/image';
 import React from 'react';
 
-export default function CarouselMain({
+export default function FullPhoto({
   images,
   currentImageIndex,
   onPrevImage,
   onNextImage,
-  handleThumbnailClick,
   onClickImage,
-  isClickImage,
   productName,
 }: {
   images: string[] | undefined;
   currentImageIndex: number;
   onPrevImage: () => void;
   onNextImage: () => void;
-  handleThumbnailClick: (index: number) => void;
   onClickImage: () => void;
-  isClickImage: boolean;
   productName: string;
 }) {
   const [isNonActiveHoveredLeft, setIsNonActiveHoveredLeft] = React.useState(false);
@@ -45,10 +41,10 @@ export default function CarouselMain({
   };
 
   return (
-    <div className={styles.carouselMain + ' ' + (isClickImage ? styles.clickImage : '')}>
-      <div className={styles.carouselImageContainer}>
+    <div className={styles.fullPhoto}>
+      <div className={styles.fullPhotoImageContainer}>
         <button
-          className={styles.carouselButton}
+          className={styles.fullPhotoButton}
           onClick={() => {
             onPrevImage();
             handleMouseLeaveLeft();
@@ -59,7 +55,7 @@ export default function CarouselMain({
           {isNonActiveHoveredLeft ? (
             <Image
               key={isNonActiveHoveredLeft ? '1' : '2'}
-              className={styles.carouselButtonIcon}
+              className={styles.fullPhotoButtonIcon}
               src={'/img/icons/arrLeftHover.svg'}
               alt="Previous"
               width={33}
@@ -67,7 +63,7 @@ export default function CarouselMain({
             />
           ) : (
             <Image
-              className={styles.carouselButtonIcon}
+              className={styles.fullPhotoButtonIcon}
               src={'/img/icons/arrLeft.svg'}
               alt="Previous"
               width={41}
@@ -80,9 +76,9 @@ export default function CarouselMain({
             key={currentImageIndex}
             src={images[currentImageIndex]}
             alt={`${productName} - ${currentImageIndex + 1}`}
-            className={styles.productItemImage}
-            width={500}
-            height={500}
+            className={styles.fullPhotoImage}
+            width={800}
+            height={800}
             priority={currentImageIndex === 0}
             loading={'eager'}
             onClick={onClickImage}
@@ -91,7 +87,7 @@ export default function CarouselMain({
           <div className={styles.fallback}></div>
         )}
         <button
-          className={styles.carouselButton}
+          className={styles.fullPhotoButton}
           onClick={() => {
             onNextImage();
             handleMouseLeaveRight();
@@ -102,7 +98,7 @@ export default function CarouselMain({
           {isNonActiveHoveredRight ? (
             <Image
               key={isNonActiveHoveredRight ? '1' : '2'}
-              className={styles.carouselButtonIcon}
+              className={styles.fullPhotoButtonIcon}
               src={'/img/icons/arrRightHover.svg'}
               alt="Next"
               width={33}
@@ -110,7 +106,7 @@ export default function CarouselMain({
             />
           ) : (
             <Image
-              className={styles.carouselButtonIcon}
+              className={styles.fullPhotoButtonIcon}
               src={'/img/icons/arrRight.svg'}
               alt="Next"
               width={41}
@@ -119,34 +115,6 @@ export default function CarouselMain({
           )}
         </button>
       </div>
-
-      {Array.isArray(images) && images.length > 1 ? (
-        <div className={styles.carouselThumbnails}>
-          {images.map((img, index) => (
-            <button
-              key={index}
-              className={`${styles.thumbnail} ${index === currentImageIndex ? styles.active : ''}`}
-              onClick={() => handleThumbnailClick(index)}>
-              <Image
-                src={img}
-                alt={`${productName} - Thumbnail ${index + 1}`}
-                width={90}
-                height={90}
-                className={styles.thumbnailImage}
-                loading={'eager'}
-              />
-            </button>
-          ))}
-        </div>
-      ) : (
-        <div className={styles.carouselThumbnails}>
-          {Array(6)
-            .fill(null)
-            .map((_, index) => (
-              <div key={index} className={styles.fallback}></div>
-            ))}
-        </div>
-      )}
     </div>
   );
 }

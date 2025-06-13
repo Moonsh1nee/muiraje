@@ -9,6 +9,8 @@
   font-family: $SwissSiena;
   min-height: 100vh;
 
+  text-align: justify;
+
   display: flex;
   flex-direction: column;
 
@@ -150,6 +152,24 @@
   &.top {
     flex-basis: 43%;
   }
+
+  &.necklace {
+    flex-basis: 45%;
+
+    @media (max-width: $mobile) {
+      flex-basis: 100%;
+
+      .productItemDescription {
+        max-width: 80%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .productItemDescription {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .productItemDescription {
@@ -261,6 +281,7 @@
 .productItemLengthOptions {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 
   font-size: 30px;
@@ -604,6 +625,246 @@
   }
 }
 
+.productItemBgWrapper.gloves {
+  top: 445px;
+  right: 95px;
+
+  .productItemBgImage {
+    height: 300px;
+    width: 710px;
+  }
+
+  .productItemBgText {
+    top: 15px;
+    right: -25px;
+    max-width: 120px;
+  }
+
+  @media (max-width: $small-desktop) {
+    top: 500px;
+    right: 70px;
+    .productItemBgImage {
+      height: 270px;
+      width: 640px;
+    }
+
+    .productItemBgText {
+      font-size: 20px;
+      top: 30px;
+      right: -35px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    top: 500px;
+    right: 40px;
+
+    .productItemBgImage {
+      height: 212px;
+      width: 500px;
+    }
+
+    .productItemBgText {
+      font-size: 18px;
+      top: 40px;
+      right: -40px;
+      max-width: 100px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    top: auto;
+    bottom: 10px;
+    right: 30px;
+
+    .productItemBgImage {
+      height: 160px;
+      width: 379px;
+    }
+
+    .productItemBgText {
+      font-size: 14px;
+      top: auto;
+      max-width: 80px;
+      bottom: 100px;
+      right: -30px;
+    }
+  }
+
+  @media (max-width: 410px) {
+    top: auto;
+    bottom: 0;
+    right: 40px;
+
+    .productItemBgImage {
+      height: 130px;
+      width: 308px;
+    }
+
+    .productItemBgText {
+      font-size: 13px;
+      max-width: 80px;
+      bottom: 80px;
+      right: -30px;
+    }
+  }
+}
+
+.productItemBgWrapper.necklace {
+  top: 25px;
+  right: 5px;
+
+  .productItemBgImage {
+    width: 232px;
+    object-fit: cover;
+  }
+
+  .productItemBgText {
+    top: auto;
+    right: auto;
+    left: -140px;
+    bottom: 20px;
+    max-width: 150px;
+  }
+
+  @media (max-width: $desktop) {
+    .productItemBgImage {
+      width: 186px;
+    }
+
+    .productItemBgText {
+      font-size: 20px;
+      left: -110px;
+      bottom: 15px;
+    }
+  }
+
+  @media (max-width: $small-desktop) {
+    top: 50px;
+
+    .productItemBgImage {
+      width: 170px;
+    }
+
+    .productItemBgText {
+      font-size: 18px;
+      left: -90px;
+      bottom: 10px;
+      max-width: 120px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    top: 80px;
+
+    .productItemBgImage {
+      width: 154px;
+    }
+
+    .productItemBgText {
+      font-size: 16px;
+      left: -80px;
+      bottom: 5px;
+      max-width: 100px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    top: auto;
+    bottom: 5px;
+
+    .productItemBgImage {
+      width: 124px;
+    }
+
+    .productItemBgText {
+      display: none;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .productItemBgImage {
+      width: 94px;
+    }
+
+    .productItemBgText {
+      font-size: 13px;
+      left: -60px;
+      bottom: 15px;
+      max-width: 80px;
+    }
+  }
+}
+
+.productItemBgWrapper.lighters {
+  top: 340px;
+  right: 60px;
+
+  .productItemBgImage {
+    width: 350px;
+    height: 400px;
+  }
+
+  .productItemBgText {
+    top: auto;
+    bottom: 0;
+    right: -20px;
+    max-width: 200px;
+  }
+
+  @media (max-width: $small-desktop) {
+    top: 300px;
+    right: 40px;
+
+    .productItemBgImage {
+      width: 300px;
+      height: 345px;
+    }
+
+    .productItemBgText {
+      font-size: 20px;
+      right: -30px;
+      bottom: 20px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    top: auto;
+    bottom: 0;
+    right: 20px;
+
+    .productItemBgImage {
+      width: 205px;
+      height: 250px;
+    }
+
+    .productItemBgText {
+      font-size: 16px;
+      right: -20px;
+      bottom: 20px;
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    top: auto;
+    bottom: 0;
+    right: 30px;
+
+    .productItemBgImage {
+      width: 160px;
+      height: 200px;
+    }
+
+    .productItemBgText {
+      font-size: 14px;
+      right: -20px;
+      bottom: 20px;
+      max-width: 120px;
+    }
+  }
+}
+
 .productItemBgImage {
   width: auto;
   height: 400px;
@@ -615,8 +876,14 @@
   font-size: 25px;
   max-width: 90px;
 
+  text-align: left;
+
   top: 0;
   right: 0;
 
   text-shadow: $shadow-2;
+}
+
+.productItemWrapper.clickImage {
+  display: none;
 }

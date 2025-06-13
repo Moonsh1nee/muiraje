@@ -9,6 +9,7 @@ import { useProductStore } from '@/assets/store/useProductStore';
 import CarouselMain from './Carousel';
 import { useCartStore } from '@/assets/store/useCartStore';
 import ModalBtnErr from './ModalBtnErr';
+import FullPhoto from './FullPhoto';
 
 export default function ProductItem({ baseLink }: { baseLink: string }) {
   const router = useRouter();
@@ -18,6 +19,7 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
   const [selectedLength, setSelectedLength] = React.useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const [isModalText, setIsModalText] = React.useState('');
+  const [isClickOnImage, setIsClickOnImage] = React.useState(false);
 
   const { products, loadProducts, getProductByBaseLink, getVariantByLink, isLoading, error } =
     useProductStore();
@@ -96,6 +98,10 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
     setIsModalText('');
   };
 
+  const handleImageClick = (isClickOnImage: boolean) => {
+    setIsClickOnImage(!isClickOnImage);
+  };
+
   return (
     <>
       <main className={`${styles.productItem} ${isModalOpen ? styles.modalOpen : ''}`}>
@@ -107,7 +113,8 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
           width={30}
           height={43}
         />
-        <div className={styles.productItemWrapper}>
+        <div
+          className={styles.productItemWrapper + ' ' + (isClickOnImage ? styles.clickImage : '')}>
           {initialVariant.name && (
             <h1 className={styles.productItemTitle}>{initialVariant.name}</h1>
           )}
@@ -120,6 +127,8 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
               onPrevImage={handlePrevImage}
               onNextImage={handleNextImage}
               handleThumbnailClick={handleThumbnailClick}
+              onClickImage={() => handleImageClick(isClickOnImage)}
+              isClickImage={isClickOnImage}
             />
             <div className={`${styles.productItemDetails} ${styles[product.baseLink]}`}>
               <div className={styles.productItemDescription}>
@@ -232,6 +241,16 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
             </div>
           )}
         </div>
+        {isClickOnImage && (
+          <FullPhoto
+            images={initialVariant.img}
+            currentImageIndex={currentImageIndex}
+            onPrevImage={handlePrevImage}
+            onNextImage={handleNextImage}
+            onClickImage={() => handleImageClick(isClickOnImage)}
+            productName={product.name}
+          />
+        )}
       </main>
       {isModalOpen && <ModalBtnErr text={isModalText} closeModal={closeModal} />}
     </>
