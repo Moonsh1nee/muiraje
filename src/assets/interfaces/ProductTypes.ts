@@ -3,6 +3,7 @@ export interface ProductVariant {
   name: string;
   waitForMe?: string;
   aboutMe?: string[];
+  warning: boolean;
   myPrice: number;
   size?: string[];
   color?: string[] | null;

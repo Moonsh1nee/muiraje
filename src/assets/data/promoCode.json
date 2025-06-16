@@ -1,0 +1,27 @@
+[
+  {
+    "code": "BLACKFRIDAY",
+    "discount": 20,
+    "expiry": "2025-11-30"
+  },
+  {
+    "code": "CYBERMONDAY",
+    "discount": 25,
+    "expiry": "2025-12-01"
+  },
+  {
+    "code": "NEWYEAR2025",
+    "discount": 15,
+    "expiry": "2025-01-15"
+  },
+  {
+    "code": "SPRINGSALE",
+    "discount": 30,
+    "expiry": "2025-03-31"
+  },
+  {
+    "code": "SUMMERDEAL",
+    "discount": 10,
+    "expiry": "2025-06-30"
+  }
+]

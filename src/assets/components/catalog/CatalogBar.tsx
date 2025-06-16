@@ -5,40 +5,18 @@ import styles from '@/assets/styles/components/CatalogBar.module.scss';
 import CategoryData from '@/assets/data/CatalogCategory.json';
 import { useEffect, useRef, useState } from 'react';
 import { useCartStore } from '@/assets/store/useCartStore';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-
-const CartIcon = dynamic(
-  () =>
-    Promise.resolve(({ isCartEmpty }: { isCartEmpty: boolean }) => (
-      <div className={styles.catalogItem}>
-        <button className={styles.catalogItemWrapper}>
-          <div>
-            <Link href={'/cart'} className={styles.catalogItemLink}>
-              <Image
-                className={styles.catalogItemImage}
-                src={isCartEmpty ? '/img/catalog/trash.png' : '/img/catalog/trashFull.png'}
-                alt={isCartEmpty ? 'Корзина пуста' : 'Корзина с товарами'}
-                width={46}
-                height={96}
-              />
-            </Link>
-          </div>
-        </button>
-        <span className={styles.catalogItemText}>Корзина</span>
-      </div>
-    )),
-  { ssr: false },
-);
 
 export default function CatalogBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const catalogBarRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
   const { cart, loadCart } = useCartStore();
 
   useEffect(() => {
     loadCart();
+    setIsHydrated(true);
   }, [loadCart]);
 
   const handleMenuClick = () => {
@@ -132,7 +110,24 @@ export default function CatalogBar() {
         {CategoryData.map((item, index) => renderCatalogItem(item, index, false))}
       </ul>
 
-      <CartIcon isCartEmpty={isCartEmpty} />
+      {isHydrated && (
+        <div className={styles.catalogItem}>
+          <button className={styles.catalogItemWrapper}>
+            <div>
+              <Link href={'/cart'} className={styles.catalogItemLink}>
+                <Image
+                  className={styles.catalogItemImage}
+                  src={isCartEmpty ? '/img/catalog/trash.png' : '/img/catalog/trashFull.png'}
+                  alt={isCartEmpty ? 'Корзина пуста' : 'Корзина с товарами'}
+                  width={46}
+                  height={96}
+                />
+              </Link>
+            </div>
+          </button>
+          <span className={styles.catalogItemText}>Корзина</span>
+        </div>
+      )}
 
       <div
         ref={mobileMenuRef}

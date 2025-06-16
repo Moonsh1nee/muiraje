@@ -80,14 +80,14 @@ export default function ProductItem({ baseLink }: { baseLink: string }) {
       return;
     }
     addToCart({
-      productId: product.id,
-      image: initialVariant.img?.[0] || product.src,
+      image: product.src,
       name: initialVariant.name || product.name,
       link: initialVariant.link,
       price: initialVariant.myPrice,
       color: initialVariant.colorActive,
       size: selectedSize,
       length: selectedLength,
+      warning: initialVariant.warning,
       quantity: 1,
     });
     alert('Added to cart!');
