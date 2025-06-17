@@ -6,6 +6,7 @@ import CategoryData from '@/assets/data/CatalogCategory.json';
 import { useEffect, useRef, useState } from 'react';
 import { useCartStore } from '@/assets/store/useCartStore';
 import Link from 'next/link';
+import { useCategoryStore } from '@/assets/store/useCategoryStore';
 
 export default function CatalogBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,11 +14,18 @@ export default function CatalogBar() {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [isHydrated, setIsHydrated] = useState(false);
   const { cart, loadCart } = useCartStore();
+  const { categories, loadCategories, setCategory } = useCategoryStore();
 
   useEffect(() => {
     loadCart();
     setIsHydrated(true);
   }, [loadCart]);
+
+  useEffect(() => {
+    if (categories.length === 0) {
+      loadCategories();
+    }
+  }, [categories.length, loadCategories]);
 
   const handleMenuClick = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -75,7 +83,13 @@ export default function CatalogBar() {
     <li key={index} className={styles.catalogItem}>
       <button
         className={styles.catalogItemWrapper}
-        onClick={isMobile ? handleMenuItemClick : undefined}>
+        onClick={() => {
+          if (isMobile) {
+            handleMenuItemClick();
+          }
+          setCategory(item.text);
+        }
+        }>
         <div>
           <Image
             className={styles.catalogItemImage}
@@ -107,7 +121,7 @@ export default function CatalogBar() {
       </div>
 
       <ul className={styles.catalogList}>
-        {CategoryData.map((item, index) => renderCatalogItem(item, index, false))}
+        {categories.map((item, index) => renderCatalogItem(item, index, false))}
       </ul>
 
       {isHydrated && (
@@ -133,7 +147,7 @@ export default function CatalogBar() {
         ref={mobileMenuRef}
         className={`${styles.catalogBarMobile} ${isMobileMenuOpen ? styles.catalogBarActive : ''}`}>
         <ul className={styles.catalogListMobile}>
-          {CategoryData.map((item, index) => renderCatalogItem(item, index, true))}
+          {categories.map((item, index) => renderCatalogItem(item, index, true))}
         </ul>
       </div>
     </div>

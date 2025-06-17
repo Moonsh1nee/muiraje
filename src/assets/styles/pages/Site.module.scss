@@ -1,0 +1,41 @@
+@use '../base//variables' as *;
+
+.site {
+  background-color: $bg-color-catalog;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: $SwissSiena;
+  color: $black;
+}
+
+.siteWrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 60px;
+
+    a {
+      color: $black;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 40px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 30px;
+    }
+  }
+}

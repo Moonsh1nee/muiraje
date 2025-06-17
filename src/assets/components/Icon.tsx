@@ -1,7 +1,23 @@
 import Image from 'next/image';
 import styles from '@/assets/styles/components/Icon.module.scss';
 
-export type IconName = 'computer' | 'btnCross' | 'btnRoll' | 'btnFullScreen' | 'lang' | 'people' | 'arrLeft' | 'arrRight' | 'iconCart' | 'iconHeart' | 'iconSearch' | 'cartPageIcon' | 'phone' | 'document';
+export type IconName =
+  | 'computer'
+  | 'btnCross'
+  | 'btnRoll'
+  | 'btnFullScreen'
+  | 'lang'
+  | 'people'
+  | 'arrLeft'
+  | 'arrRight'
+  | 'iconCart'
+  | 'iconHeart'
+  | 'iconSearch'
+  | 'cartPageIcon'
+  | 'phone'
+  | 'document'
+  | 'contacts'
+  | 'aboutMuiraje';
 
 interface IconProps {
   name: IconName;
@@ -21,6 +37,12 @@ export default function Icon({
   const src = `/img/icons/${name}.svg`;
 
   return (
-    <Image src={src} className={styles[className] || styles[name] || styles.icon} alt={alt} width={width} height={height}/>
+    <Image
+      src={src}
+      className={styles[className] || styles[name] || styles.icon}
+      alt={alt}
+      width={width}
+      height={height}
+    />
   );
 }

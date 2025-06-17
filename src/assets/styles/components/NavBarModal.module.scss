@@ -57,6 +57,8 @@
 .navigationLinkModal {
   color: $dark-grey-5;
   font-size: 22px;
+  display: block;
+  width: 100%;
   transition: all 0.3s ease-in-out;
 }
 

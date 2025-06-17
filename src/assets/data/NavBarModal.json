@@ -2,7 +2,7 @@
   "file": {
     "link1": {
       "title": "Telegram",
-      "url": "https://t.me/Moonsh1ne_OP",
+      "url": "https://t.me/mymiradg",
       "active": true
     },
     "link2": {
@@ -14,18 +14,18 @@
   "about": {
     "link1": {
       "title": "Muiraje",
-      "url": "/about",
+      "url": "/about/muiraje",
       "active": true
     },
     "link2": {
       "title": "Site",
-      "url": "",
-      "active": false
+      "url": "/about/site",
+      "active": true
     },
     "link3": {
       "title": "Collection",
-      "url": "",
-      "active": false
+      "url": "/about/collection",
+      "active": true
     }
   }
 }

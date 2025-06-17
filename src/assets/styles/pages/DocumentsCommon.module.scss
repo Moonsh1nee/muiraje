@@ -1,0 +1,202 @@
+@use "../base/variables" as *;
+
+.background {
+  padding: 80px 30px 20px;
+  background-color: $black;
+  font-family: $SwissSiena;
+  min-height: 100vh;
+  color: $black;
+  font-size: 20px;
+
+  @media (max-width: $small-desktop) {
+    padding: 40px 20px 20px;
+    font-size: 18px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 40px 20px 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 20px 5px;
+  }
+}
+
+.page {
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: $light-grey-2;
+  border-top: 3px solid $light-grey-2;
+  border-left: 3px solid $light-grey-2;
+  border-right: 3px solid $dark-grey;
+  border-bottom: 3px solid $dark-grey;
+
+  & > div {
+    padding: 3px;
+
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+    border-right: 3px solid $dark-grey-2;
+    border-bottom: 3px solid $dark-grey-2;
+  }
+
+  @media (max-width: $small-desktop) {
+    max-width: 90%;
+  }
+
+  @media (max-width: $tablet) {
+    border-width: 2px;
+
+    & > div {
+      padding: 2px;
+      border-width: 2px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    border-width: 1px;
+    max-width: 100%;
+
+    & > div {
+      padding: 1px;
+      border-width: 1px;
+    }
+  }
+}
+
+.mainContent {
+  padding: 140px 20px 20px;
+  position: relative;
+
+  @media (max-width: $small-desktop) {
+    padding: 125px 20px 20px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 95px 20px 20px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 10px 10px;
+  }
+}
+
+.title {
+  font-size: 180px;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 8%;
+
+  @media (max-width: $small-desktop) {
+    font-size: 160px;
+    left: 5%;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 120px;
+    left: 3%;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 80px;
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+}
+
+.textContainer {
+  margin-left: 150px;
+
+  a {
+    color: $black;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    margin-left: 135px;
+  }
+
+  @media (max-width: $small-desktop) {
+    margin-left: 100px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-left: 65px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-left: 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .listItem {
+    position: relative;
+    padding-left: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 4px;
+      height: 4px;
+      background-color: $black;
+    }
+  }
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.mainContentPayment {
+  padding: 10px 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    gap: 0;
+
+    .listItem {
+      &::before {
+        content: "";
+        top: 8px;
+
+        @media (max-width: $tablet) {
+          top: 6px;
+        }
+      }
+    }
+  }
+
+  .titlePayment {
+    font-size: 180px;
+    line-height: 1;
+
+    @media (max-width: $small-desktop) {
+      font-size: 160px;
+    }
+
+    @media (max-width: $tablet) {
+      font-size: 120px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 80px;
+    }
+  }
+}

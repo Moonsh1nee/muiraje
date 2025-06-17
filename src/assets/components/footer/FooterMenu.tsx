@@ -45,7 +45,7 @@ export default function FooterMenu() {
         <div className={styles.footerNavLeftSide}>Muiraje 2024 Office</div>
 
         <div className={styles.footerNavLinks}>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/about/collection" className={styles.footerNavLink}>
             Muiraje: cozy home collection
           </Link>
           <Link href="" className={styles.footerNavLink + ' ' + styles.footerNavLinkDeactivated}>
@@ -59,16 +59,16 @@ export default function FooterMenu() {
         <div className={styles.footerNavDivider}></div>
 
         <div className={styles.footerNavLinks}>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/documents/delivery" className={styles.footerNavLink}>
             Доставка
           </Link>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/documents/payment" className={styles.footerNavLink}>
             Оплата
           </Link>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/documents/contacts" className={styles.footerNavLink}>
             Контакты
           </Link>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/documents/offer" className={styles.footerNavLink}>
             Оферта и политика конфиденциальности
           </Link>
         </div>
@@ -76,7 +76,7 @@ export default function FooterMenu() {
         <div className={styles.footerNavDivider}></div>
 
         <div className={styles.footerNavLinks}>
-          <Link href="" className={styles.footerNavLink}>
+          <Link href="/about/collection" className={styles.footerNavLink}>
             Office Gallery
           </Link>
           <Link href="" className={styles.footerNavLink + ' ' + styles.footerNavLinkDeactivated}>

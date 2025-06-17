@@ -1,7 +1,7 @@
 @use "../base/variables" as *;
 
 .header {
-  background: linear-gradient(90deg, #000c78 0%, #b5b5b5 82%);
+  background: linear-gradient(90deg, $blue-2 0%, $dark-grey-3 82%);
   padding: 1px 1px 1px 7px;
 
   display: flex;
@@ -9,11 +9,23 @@
   align-items: center;
 
   &.gradient {
-    background: linear-gradient(90deg, #000c78 0%, #b5b5b5 82%);
+    background: linear-gradient(90deg, $blue-2 0%, $dark-grey-3 82%);
   }
 
   &.gray {
     background: $dark-grey-3;
+  }
+
+  &.blue {
+    background: $blue-2;
+  }
+
+  &.pink {
+    background: #D36E9C;
+  }
+
+  &.blue-2 {
+    background: $blue-3;
   }
 
   @media (max-width: $tablet) {
@@ -92,6 +104,10 @@
 
 .logoNav {
   text-transform: capitalize;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
 }
 
 .headerButtons {

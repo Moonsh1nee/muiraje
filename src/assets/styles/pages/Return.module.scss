@@ -1,0 +1,176 @@
+@use "../base/variables" as *;
+
+.returnPage {
+  background-color: $bg-color-catalog;
+  padding: 40px 20px 100px;
+  min-height: 100vh;
+  font-size: 20px;
+  color: $white;
+  font-family: $SwissSiena;
+
+  @media (max-width: $mobile) {
+    padding: 40px 10px 60px;
+    font-size: 16px;
+  }
+}
+
+.returnPageContent {
+  background-color: $black;
+  border-top: 3px solid $black;
+  border-left: 3px solid $black;
+  border-bottom: 3px solid $dark-grey;
+  border-right: 3px solid $dark-grey;
+
+  & > div {
+    padding: 6px;
+
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+    border-bottom: 3px solid $dark-grey-2;
+    border-right: 3px solid $dark-grey-2;
+  }
+
+  @media (max-width: $tablet) {
+    border-width: 2px;
+    & > div {
+      padding: 4px;
+      border-width: 2px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    border-width: 1px;
+    & > div {
+      padding: 2px;
+      border-width: 1px;
+    }
+  }
+}
+
+.mainContentReturn {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  @media (max-width: $small-desktop) {
+    padding: 10px 10px;
+    gap: 10px;
+  }
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.titleReturn {
+  font-size: 180px;
+  line-height: 1;
+
+  @media (max-width: $desktop) {
+    font-size: 120px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 80px;
+  }
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+
+  .link {
+    color: $white;
+    text-decoration: underline;
+  
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    max-width: 400px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 100%;
+  }
+}
+
+.bgWrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+
+  @media (max-width: $desktop) {
+    max-width: 400px;
+  }
+
+  @media (max-width: $small-desktop) {
+    max-width: 300px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 100%;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 400px;
+  }
+}
+
+.bgImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  padding-right: 30px;
+
+  @media (max-width: $desktop) {
+    padding-right: 15px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-right: 0;
+  }
+}
+
+.textOverlay {
+  font-size: 18px;
+  position: absolute;
+  bottom: 120px;
+  right: 0;
+  max-width: 120px;
+
+  @media (max-width: $desktop) {
+    bottom: 80px;
+    right: -15px;
+  }
+
+  @media (max-width: $small-desktop) {
+    font-size: 14px;
+    max-width: 90px;
+    bottom: 240px;
+    right: 90px;
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 18px;
+    max-width: 120px;
+    bottom: auto;
+    right: auto;
+    top: 50px;
+    left: 30%;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    max-width: 100px;
+    top: 30px;
+    left: 20%;
+  }
+}

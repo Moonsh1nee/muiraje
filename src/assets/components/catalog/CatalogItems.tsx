@@ -5,9 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { useProductStore } from '@/assets/store/useProductStore';
+import { useCategoryStore } from '@/assets/store/useCategoryStore';
 
 export default function CatalogItems() {
   const { products, loadProducts } = useProductStore();
+  const { currentCategory } = useCategoryStore();
 
   React.useEffect(() => {
     if (products.length === 0) {
@@ -15,10 +17,15 @@ export default function CatalogItems() {
     }
   }, [products.length, loadProducts]);
 
+  const filteredProducts =
+    currentCategory === 'All'
+      ? products
+      : products.filter((item) => item.category === currentCategory);
+
   return (
     <div className={styles.catalogItems}>
       <div className={styles.catalogItemsWrapper}>
-        {products.map((item) => (
+        {filteredProducts.map((item) => (
           <article key={item.id} className={styles.catalogItem}>
             <Link href={`/catalog/${item.baseLink}`} className={styles.catalogItemLink}>
               <div className={styles.catalogItemImageWrapper}>

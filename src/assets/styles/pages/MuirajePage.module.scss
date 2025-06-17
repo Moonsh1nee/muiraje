@@ -1,0 +1,20 @@
+@use "../base/variables" as *;
+
+.muirajePageWrapper {
+  background-color: $black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.muirajePage {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.muirajeImage {
+  max-width: 1200px;
+  width: 100%;
+}
