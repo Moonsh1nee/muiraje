@@ -187,7 +187,7 @@ export default function Cart() {
                         <div>{totalPrice.toLocaleString('ru-RU')} руб.</div>
                       </div>
                       <button className={styles.cartItemOffer}>
-                        <Link href="/checkout">Оформить!</Link>
+                        <Link href="/cart/offer">Оформить!</Link>
                       </button>
                     </div>
                   </div>
@@ -216,16 +216,19 @@ export default function Cart() {
               </span>
             </div>
             <nav className={styles.cartFooterLinks}>
-              <Link href="/catalog" className={styles.cartFooterLink}>
+              <Link href="/documents/delivery" className={styles.cartFooterLink}>
                 Доставка
               </Link>
-              <Link href="/catalog" className={styles.cartFooterLink}>
+              <Link href="/documents/payment" className={styles.cartFooterLink}>
                 Оплата
               </Link>
-              <Link href="/catalog" className={styles.cartFooterLink}>
+              <Link href="/documents/return" className={styles.cartFooterLink}>
+                Возврат
+              </Link>
+              <Link href="/documents/contacts" className={styles.cartFooterLink}>
                 Контакты
               </Link>
-              <Link href="/catalog" className={styles.cartFooterLink}>
+              <Link href="/documents/offer" className={styles.cartFooterLink}>
                 Оферта и политика конфиденциальности
               </Link>
             </nav>

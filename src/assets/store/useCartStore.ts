@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import promoCodesData from '@/assets/data/promoCode.json'
 
-interface CartItem {
+export interface CartItem {
   image: string;
   name: string;
   link: string;

@@ -494,6 +494,8 @@
     transition: all 0.2s ease-in-out;
 
     a {
+      display: block;
+      width: 100%;
       font-size: 24px;
       color: $white;
       text-shadow:
@@ -721,7 +723,9 @@
   .cartFooterLinks {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px 30px;
 
     .cartFooterLink {
       color: $dark-grey-3;
@@ -742,6 +746,10 @@
           1px 0 0 $black,
           0 1px 0 $black;
       }
+    }
+
+    @media (max-width: $mobile) {
+      gap: 5px 10px;
     }
   }
 }

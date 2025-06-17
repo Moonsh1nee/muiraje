@@ -1,0 +1,373 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.offer {
+  padding: 20px 30px;
+  background-color: $black;
+  min-height: 100vh;
+  color: $white;
+  font-family: $SwissSiena;
+
+  @media (max-width: $mobile) {
+    padding: 10px;
+  }
+}
+
+.offerContent {
+  background-color: $light-grey;
+  border-top: 3px solid $light-grey;
+  border-left: 3px solid $light-grey;
+  border-right: 3px solid $dark-grey;
+  border-bottom: 3px solid $dark-grey;
+
+  & > div {
+    padding: 3px;
+
+    border-top: 3px solid $white;
+    border-left: 3px solid $white;
+    border-right: 3px solid $dark-grey-2;
+    border-bottom: 3px solid $dark-grey-2;
+  }
+
+  @media (max-width: $mobile) {
+    border-top: 1px solid $light-grey;
+    border-left: 1px solid $light-grey;
+    border-right: 1px solid $dark-grey;
+    border-bottom: 1px solid $dark-grey;
+
+    & > div {
+      padding: 1px;
+
+      border-top: 1px solid $white;
+      border-left: 1px solid $white;
+      border-right: 1px solid $dark-grey-2;
+      border-bottom: 1px solid $dark-grey-2;
+    }
+  }
+}
+
+.offerMain {
+  color: $black;
+}
+
+.offerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  @media (max-width: $mobile) {
+    padding: 10px;
+  }
+}
+
+.offerTitle {
+  font-size: 90px;
+  line-height: 1;
+  color: $dark-grey-3;
+  text-shadow: 2px 2px 0 rgba($color: $black, $alpha: 0.65);
+  text-align: center;
+
+  @media (max-width: $mobile) {
+    font-size: 60px;
+  }
+
+  @media (max-width: $small-mobile) {
+    font-size: 40px;
+  }
+}
+
+.offerFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 360px;
+  width: 100%;
+
+  @media (max-width: $mobile) {
+    gap: 5px;
+  }
+}
+
+.offerInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.offerLabel {
+  font-size: 20px;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.offerInput {
+  padding: 5px;
+  font-size: 20px;
+  background-color: $light-grey-2;
+  box-shadow: 1.9px 2.8px 2.1px rgba($color: $black, $alpha: 0.25) inset;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.customRadioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.customRadio {
+  position: relative;
+}
+
+.customRadioInput {
+  display: none;
+}
+
+.customRadioLabel {
+  display: flex;
+  cursor: pointer;
+  gap: 3px;
+  font-size: 18px;
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.customRadioButton {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: $light-grey-2;
+  @include border--white--dark-grey;
+
+  transition: all 0.2s ease-in-out;
+
+  & > div {
+    width: 14px;
+    height: 14px;
+    padding: 2px 0 0 2px;
+    border-right: 2px solid $dark-grey-2;
+    border-bottom: 2px solid $dark-grey-2;
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $light-grey;
+  }
+
+  &:active {
+    background-color: $blue-2;
+    @include border--dark-grey--white;
+
+    & > div {
+      border-right: none;
+      border-bottom: none;
+      border-top: 2px solid $dark-grey-2;
+      border-left: 2px solid $dark-grey-2;
+      padding: 0 2px 2px 0;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    width: 14px;
+    height: 14px;
+    border-width: 1px;
+
+    & > div {
+      width: 12px;
+      height: 12px;
+      padding: 1px 0 0 1px;
+      border-width: 1px;
+    }
+
+    &:active {
+      border-width: 1px;
+
+      & > div {
+        border-right: none;
+        border-bottom: none;
+        border-top: 1px solid $dark-grey-2;
+        border-left: 1px solid $dark-grey-2;
+        padding: 0 1px 1px 0;
+      }
+    }
+  }
+}
+
+.customRadioInput:checked + .customRadioLabel > .customRadioButton {
+  background-color: $blue-2;
+  @include border--dark-grey--white;
+
+  & > div {
+    border-right: none;
+    border-bottom: none;
+    border-top: 2px solid $dark-grey-2;
+    border-left: 2px solid $dark-grey-2;
+    padding: 0 2px 2px 0;
+  }
+
+  @media (max-width: $mobile) {
+    border-width: 1px;
+
+    & > div {
+      border-right: none;
+      border-bottom: none;
+      border-top: 1px solid $dark-grey-2;
+      border-left: 1px solid $dark-grey-2;
+      padding: 0 1px 1px 0;
+    }
+  }
+}
+
+.customRadioContent {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.offerTextarea {
+  padding: 5px;
+  font-size: 20px;
+  background-color: $light-grey-2;
+  box-shadow: 1.9px 2.8px 2.1px rgba($color: $black, $alpha: 0.25) inset;
+  resize: vertical;
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.offerFormGroupArea {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  width: 100%;
+}
+
+.offerButton {
+  max-width: 360px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: $dark-grey-8;
+  margin: 10px 0;
+  color: $white;
+  box-shadow:
+    3px 3px 6px rgba($color: $black, $alpha: 0.05) inset,
+    0 3px 3px rgba($color: $black, $alpha: 0.25);
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $dark-grey-3;
+  }
+
+  &:active {
+    background-color: $dark-grey-3;
+    box-shadow:
+      3px 3px 6px rgba($color: $black, $alpha: 0.05) inset,
+      0 -3px 3px rgba($color: $black, $alpha: 0.25);
+  }
+
+  &:focus {
+    outline: 1px solid $black;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+.offerLink {
+  color: $dark-grey-8;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $dark-grey-3;
+  }
+
+  &:active {
+    color: $dark-grey-3;
+  }
+}
+
+.offerText {
+  text-align: center;
+  margin-top: 20px;
+
+  .offerLinkFooter {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+
+.offerSuccess {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .offerSuccessLink {
+    display: block;
+    color: #adadad;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+    font-size: 18px;
+    text-align: center;
+
+    &:hover {
+      color: $dark-grey-2;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+  }
+}
+
+.offerSuccessTitle {
+  font-size: 80px;
+  color: $dark-grey-3;
+  text-shadow: 2px 2px 0 rgba($color: $black, $alpha: 0.65);
+
+  @media (max-width: $tablet) {
+    font-size: 50px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 30px;
+  }
+}
+
+.offerSuccessOrderNumber {
+  font-size: 80px;
+  color: $dark-grey-3;
+  text-shadow: 2px 2px 0 rgba($color: $black, $alpha: 0.65);
+  text-align: center;
+  margin: 40px 0;
+
+  @media (max-width: $tablet) {
+    font-size: 50px;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 30px;
+  }
+}
