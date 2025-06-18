@@ -39,8 +39,8 @@ export default function Collection() {
           emphasize the importance of balance and tranquility, helping people feel comfortable in
           all circumstances. These are pieces that easily transition from a professional environment
           to a cozy home environment. With office sleepover/cozy home, people can confidently
-          navigate through various environments without compromising on comfort. Whether it's a
-          casual day out or a formal event, the brand's pieces are crafted to provide a sense of
+          navigate through various environments without compromising on comfort. Whether it&apos;s a
+          casual day out or a formal event, the brand&apos;s pieces are crafted to provide a sense of
           ease and relaxation, allowing individuals to focus on their tasks without being hindered
           by their clothing. The designs are executed with meticulous attention to detail, so that
           each piece complements the other and at the same time stands out on its own. Combining
@@ -49,10 +49,10 @@ export default function Collection() {
           work or relaxing at home, these pieces are designed to adapt easily to any situation,
           allowing people to go through their day with confidence and ease. In a world where the
           blend of work and personal life has become the norm, the collection represents a fresh
-          fusion of harmony and self-expression. In essence, Muiraje's collection empowers
+          fusion of harmony and self-expression. In essence, Muiraje&apos;s collection empowers
           individuals to embrace every moment with confidence and comfort, knowing that they are
-          dressed in clothing that supports them in every situation. It's not just about looking
-          good; it's about feeling good and being able to tackle whatever life throws your way with
+          dressed in clothing that supports them in every situation. It&apos;s not just about looking
+          good; it&apos;s about feeling good and being able to tackle whatever life throws your way with
           ease and grace.
         </div>
         <div className={styles.collectionTextSecond}>
